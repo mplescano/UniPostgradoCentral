@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+	"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="alumnoSqlMap">
+	<resultMap class="dominio.negocio.Alumno" id="result">
+		<result property="id" 								column="aeid" />
+		
+		<result property="facultad.codigo" 					column="fccodigo" />
+		<result property="facultad.nombre" 					column="fcnombre" />
+		
+		<result property="tpPostgrado.codigo" 				column="tppcodigo" />
+		<result property="tpPostgrado.nombre" 				column="tppnombre" />
+		<result property="tpPostgrado.descripcion" 			column="tppdescripcion" />
+		
+		<result property="periodoAcademico" 				column="aeperiodo_academico" />
+		<result property="codigoAlumno" 					column="aecodigo_alumno" />
+		<result property="codigoDocente" 					column="aecodigo_docente" />
+		<result property="apellidoPaterno" 					column="aeapellido_paterno" />
+		<result property="apellidoMaterno" 					column="aeapellido_materno" />
+		<result property="nombres" 							column="aenombres" />
+		<result property="email" 							column="aeemail" />
+		<result property="telefono" 						column="aetelefono" />
+		<result property="cell" 							column="aecelular" />
+		<result property="tpEstadoCivil" 					column="aetp_estado_civil" />
+		<result property="tpSexo" 							column="aetp_sexo" />
+		<result property="nacionalidad" 					column="aenacionalidad" />
+		<result property="tpDoc" 							column="aetp_documento" />
+		<result property="nroDoc" 							column="aenro_documento" />
+		<result property="fechaNac" 						column="aefecha_nacimiento" />
+		<result property="observaciones" 					column="aeobservaciones" />
+		<result property="fechaRegistro" 					column="aefecha_registro" />
+		<result property="direccion" 						column="aedireccion" />
+		
+		<result property="ubigeoDomicilio.id"          			column="aeubigeo_domicilio" />
+		<result property="ubigeoDomicilio.cod_pais"    			column="ubidircod_pais" />
+		<result property="ubigeoDomicilio.cod_departamento" 	column="ubidircod_departamento" />
+		<result property="ubigeoDomicilio.cod_provincia" 		column="ubidircod_provincia" />						
+		<result property="ubigeoDomicilio.cod_distrito" 		column="ubidircod_distrito" />						
+		<result property="ubigeoDomicilio.nombre" 				column="ubidirnombre" />						
+		
+		<result property="ubigeoNac.id" 						column="aeubigeo_nacimiento" />
+		<result property="ubigeoNac.cod_pais"    				column="ubinaccod_pais" />
+		<result property="ubigeoNac.cod_departamento" 			column="ubinaccod_departamento" />
+		<result property="ubigeoNac.cod_provincia" 				column="ubinaccod_provincia" />						
+		<result property="ubigeoNac.cod_distrito" 				column="ubinaccod_distrito" />						
+		<result property="ubigeoNac.nombre" 					column="ubinacnombre" />
+		
+		<result property="esIngreso"							column="aees_ingreso" />
+		<!-- el campo de arriba debe estar primero que el de abajo, ya que el de abajo supone que el de arriba es verdadero para que deje asignarse un valor-->
+
+		<result property="tpModalidadIngreso.codigo" 			column="tmicodigo" />
+		<result property="tpModalidadIngreso.nombre" 			column="tminombre" />
+		<result property="tpModalidadIngreso.descripcion"		column="tmidescripcion" />
+
+		<result property="fechaInscripcion"						column="aefecha_inscripcion" />
+		<result property="descripcionModalidadIngreso"			column="aedescripcion_modalidad_ingreso" />
+		
+		<result property="periodoEgreso"						column="aeperiodo_egreso" />
+		<result property="fechaSustentacion"					column="aefecha_sustentacion" />
+		<result property="tesis01"								column="aetesis01" />
+		<result property="tesis02"								column="aetesis02" />
+		<result property="estudioPostgrado"						column="aeestudio_postgrado" nullValue="0" />
+		
+		<result property="mencion.codigo" 				column="mncodigo" />
+		<result property="mencion.idEstudioPostgrado" 	column="mnid_estudio_postgrado" />
+		<result property="mencion.nombre" 				column="mnnombre" />
+		<result property="mencion.descripcion" 			column="mndescripcion" />
+		
+		
+<!-- 
+		<result property="gradosYTitulos" 						column="{idAlumnoEgresado=aeid}" select="gradoTituloSqlMap.getGradoTituloList" />
+		<result property="idiomas" 								column="{idAlumnoEgresado=aeid}" select="tpIdiomaSqlMap.getTpIdiomaList"/>
+		<result property="planDeEstudios" 						column="{idAlumnoEgresado=aeid}" select="planEstudioSqlMap.getPlanEstudioList"/>
+-->
+	</resultMap>
+	
+	<statement id="getAlumnoList" resultMap="result">
+		SELECT
+			ae.id as aeid,
+			
+			fc.codigo as fccodigo,
+			fc.nombre as fcnombre,
+			
+			tpp.codigo as tppcodigo,
+			tpp.nombre as tppnombre,
+			tpp.descripcion as tppdescripcion,
+
+			ae.periodo_academico as aeperiodo_academico,
+			ae.codigo_alumno as aecodigo_alumno,
+			ae.codigo_docente as aecodigo_docente,
+			ae.apellido_paterno as aeapellido_paterno,
+			ae.apellido_materno as aeapellido_materno,
+			ae.nombres as aenombres,
+			ae.email as aeemail,
+			ae.telefono as aetelefono,
+			ae.celular as aecelular,
+			ae.tp_estado_civil as aetp_estado_civil,
+			ae.tp_sexo as aetp_sexo,
+			ae.nacionalidad as aenacionalidad,
+			ae.tp_documento as aetp_documento,
+			ae.nro_documento as aenro_documento,
+			ae.fecha_nacimiento as aefecha_nacimiento,
+			ae.observaciones as aeobservaciones,
+			ae.fecha_registro as aefecha_registro,
+			ae.direccion as aedireccion,
+			ae.ubigeo_domicilio as aeubigeo_domicilio,
+			ae.ubigeo_nacimiento as aeubigeo_nacimiento,
+			
+			ubidir.cod_pais         as ubidircod_pais,
+			ubidir.cod_departamento as ubidircod_departamento,
+			ubidir.cod_provincia    as ubidircod_provincia,
+			ubidir.cod_distrito     as ubidircod_distrito,
+			ubidir.nombre           as ubidirnombre,
+			
+			ubinac.cod_pais         as ubinaccod_pais,
+			ubinac.cod_departamento as ubinaccod_departamento,
+			ubinac.cod_provincia    as ubinaccod_provincia,
+			ubinac.cod_distrito     as ubinaccod_distrito,
+			ubinac.nombre           as ubinacnombre,
+			
+			tmi.codigo				as tmicodigo,
+			tmi.nombre				as tminombre,
+			tmi.descripcion			as tmidescripcion,
+			
+			ae.fecha_inscripcion				as aefecha_inscripcion,
+			ae.descripcion_modalidad_ingreso	as aedescripcion_modalidad_ingreso,
+			ae.es_ingreso 						as aees_ingreso,
+			
+			mn.id 								as mncodigo,
+			mn.id_estudio_postgrado 			as mnid_estudio_postgrado,
+			mn.nombre 							as mnnombre,
+			mn.descripcion 						as mndescripcion,
+			
+			ae.periodo_egreso		as aeperiodo_egreso,
+			ae.fecha_sustentacion	as aefecha_sustentacion,
+			ae.tesis01				as aetesis01,
+			ae.tesis02				as aetesis02,
+			ae.estudio_postgrado	as aeestudio_postgrado
+
+			
+		FROM
+			(
+				(
+				    (
+				        (facultad fc 
+				        	INNER JOIN (
+				        				alumno AS ae LEFT JOIN tp_modalidad_ingreso tmi ON ae.tp_modalidad_ingreso = tmi.codigo
+				        				) ON fc.codigo = ae.facultad
+				        )
+					    INNER JOIN tp_postgrado tpp ON ae.tp_postgrado = tpp.codigo
+				    )
+				     LEFT JOIN ubigeo ubidir ON ae.ubigeo_domicilio = ubidir.id
+				)
+				LEFT JOIN ubigeo AS ubinac ON ae.ubigeo_nacimiento = ubinac.id
+			)
+			LEFT JOIN mencion mn ON ae.mencion = mn.id
+		<dynamic prepend="WHERE">
+			<isNotNull property="facultad_codigo" prepend="AND">
+				ae.facultad LIKE #facultad_codigo#
+			</isNotNull>
+			<isNotNull property="tpPostgrado_codigo" prepend="AND">
+				ae.tp_postgrado=#tpPostgrado_codigo#
+			</isNotNull>
+			<isNotNull property="mencion_nombre" prepend="AND">
+				mn.nombre LIKE #mencion_nombre#
+			</isNotNull>
+			<isNotNull property="nombres" prepend="AND">
+				ae.nombres LIKE #nombres#
+			</isNotNull>
+			<isNotNull property="apellidoPaterno" prepend="AND">
+				ae.apellido_paterno LIKE #apellidoPaterno#
+			</isNotNull>
+			<isNotNull prepend="AND" property="apellidoMaterno">
+				ae.apellido_materno LIKE #apellidoMaterno#
+			</isNotNull>
+			<isNotNull prepend="AND" property="periodoAcademico">
+				ae.periodo_academico LIKE #periodoAcademico#
+			</isNotNull>
+		</dynamic>
+		ORDER BY ae.id
+	</statement>
+	
+	<statement id="getAlumno" resultMap="result">
+		SELECT
+			ae.id as aeid,
+			
+			fc.codigo as fccodigo,
+			fc.nombre as fcnombre,
+			
+			tpp.codigo as tppcodigo,
+			tpp.nombre as tppnombre,
+			tpp.descripcion as tppdescripcion,
+
+			ae.periodo_academico as aeperiodo_academico,
+			ae.codigo_alumno as aecodigo_alumno,
+			ae.codigo_docente as aecodigo_docente,
+			ae.apellido_paterno as aeapellido_paterno,
+			ae.apellido_materno as aeapellido_materno,
+			ae.nombres as aenombres,
+			ae.email as aeemail,
+			ae.telefono as aetelefono,
+			ae.celular as aecelular,
+			ae.tp_estado_civil as aetp_estado_civil,
+			ae.tp_sexo as aetp_sexo,
+			ae.nacionalidad as aenacionalidad,
+			ae.tp_documento 					as aetp_documento,
+			ae.nro_documento 					as aenro_documento,
+			ae.fecha_nacimiento 				as aefecha_nacimiento,
+			ae.observaciones 					as aeobservaciones,
+			ae.fecha_registro 					as aefecha_registro,
+			ae.direccion 						as aedireccion,
+			ae.ubigeo_domicilio 				as aeubigeo_domicilio,
+			ae.ubigeo_nacimiento 				as aeubigeo_nacimiento,
+			
+			ubidir.cod_pais         			as ubidircod_pais,
+			ubidir.cod_departamento 			as ubidircod_departamento,
+			ubidir.cod_provincia    			as ubidircod_provincia,
+			ubidir.cod_distrito     			as ubidircod_distrito,
+			ubidir.nombre           			as ubidirnombre,
+			
+			ubinac.cod_pais         			as ubinaccod_pais,
+			ubinac.cod_departamento 			as ubinaccod_departamento,
+			ubinac.cod_provincia    			as ubinaccod_provincia,
+			ubinac.cod_distrito     			as ubinaccod_distrito,
+			ubinac.nombre           			as ubinacnombre,
+			
+			tmi.codigo							as tmicodigo,
+			tmi.nombre							as tminombre,
+			tmi.descripcion						as tmidescripcion,
+			
+			ae.fecha_inscripcion				as aefecha_inscripcion,
+			ae.descripcion_modalidad_ingreso	as aedescripcion_modalidad_ingreso,
+			ae.es_ingreso 						as aees_ingreso,
+			
+			mn.id 								as mncodigo,
+			mn.id_estudio_postgrado 			as mnid_estudio_postgrado,
+			mn.nombre 							as mnnombre,
+			mn.descripcion 						as mndescripcion,
+			
+			ae.periodo_egreso		as aeperiodo_egreso,
+			ae.fecha_sustentacion	as aefecha_sustentacion,
+			ae.tesis01				as aetesis01,
+			ae.tesis02				as aetesis02,
+			ae.estudio_postgrado	as aeestudio_postgrado
+			
+		FROM
+			(
+				(
+				    (
+				        (facultad fc 
+				        	INNER JOIN (
+				        				alumno AS ae LEFT JOIN tp_modalidad_ingreso tmi ON ae.tp_modalidad_ingreso = tmi.codigo
+				        				) ON fc.codigo = ae.facultad
+				        )
+					    INNER JOIN tp_postgrado tpp ON ae.tp_postgrado = tpp.codigo
+				    )
+				     LEFT JOIN ubigeo ubidir ON ae.ubigeo_domicilio = ubidir.id
+				)
+				LEFT JOIN ubigeo AS ubinac ON ae.ubigeo_nacimiento = ubinac.id
+			)
+			LEFT JOIN mencion mn ON ae.mencion = mn.id
+		WHERE
+        	ae.id=#value#
+	</statement>
+	
+	<insert id="insertAlumno">
+		INSERT INTO alumno(	id, 	facultad, 			tp_postgrado, 			periodo_academico, 	codigo_alumno, 	codigo_docente, 			apellido_paterno, 	apellido_materno, 	nombres, 	email, 		telefono, 	celular, 	tp_estado_civil, 	tp_sexo, 		nacionalidad, 	tp_documento, 		nro_documento, 		fecha_nacimiento, 	observaciones, 				fecha_registro, 	direccion, 		ubigeo_domicilio, 				ubigeo_nacimiento,		fecha_inscripcion,			es_ingreso,		tp_modalidad_ingreso,					descripcion_modalidad_ingreso,			mencion,					periodo_egreso,				fecha_sustentacion,			tesis01,			tesis02, 			estudio_postgrado) VALUES(
+							#id#, 	#facultad.codigo#, 	#tpPostgrado.codigo#, 	#periodoAcademico:VARCHAR#,	#codigoAlumno:VARCHAR#,	#codigoDocente:VARCHAR#,	#apellidoPaterno:VARCHAR#,	#apellidoMaterno:VARCHAR#,	#nombres:VARCHAR#,	#email:VARCHAR#,	#telefono:VARCHAR#,	#cell:VARCHAR#,		#tpEstadoCivil#,	#tpSexo#,		#nacionalidad:VARCHAR#,	#tpDoc#,			#nroDoc:VARCHAR#,			#fechaNac:DATE#,			#observaciones:VARCHAR#,	#fechaRegistro:DATE#,	#direccion:VARCHAR#,	#ubigeoDomicilio.id:VARCHAR#,	#ubigeoNac.id:VARCHAR#,	#fechaInscripcion:DATE#,	#esIngreso#,	#tpModalidadIngreso.codigo:VARCHAR#,	#descripcionModalidadIngreso:VARCHAR#,	#mencion.codigo:VARCHAR#,	#periodoEgreso:VARCHAR#,	#fechaSustentacion:DATE#,	#tesis01:VARCHAR#,	#tesis02:VARCHAR#,	#estudioPostgrado:INTEGER:0#)
+	</insert>
+	
+	<update id="updateAlumno">
+		UPDATE alumno SET
+			facultad=#facultad.codigo#,
+			tp_postgrado=#tpPostgrado.codigo#,
+			periodo_academico=#periodoAcademico:VARCHAR#,
+			codigo_alumno=#codigoAlumno:VARCHAR#,
+			codigo_docente=	#codigoDocente:VARCHAR#,
+			apellido_paterno=#apellidoPaterno:VARCHAR#,
+			apellido_materno=#apellidoMaterno:VARCHAR#,
+			nombres=#nombres:VARCHAR#,
+			email=#email:VARCHAR#,
+			telefono=#telefono:VARCHAR#,
+			celular=#cell:VARCHAR#,
+			tp_estado_civil=#tpEstadoCivil#,
+			tp_sexo=#tpSexo#,
+			nacionalidad=#nacionalidad:VARCHAR#,
+			tp_documento=#tpDoc#,
+			nro_documento=#nroDoc:VARCHAR#,
+			fecha_nacimiento=#fechaNac:DATE#,
+			observaciones=#observaciones:VARCHAR#,
+			fecha_registro=#fechaRegistro:DATE#,
+			direccion=#direccion:VARCHAR#,
+			ubigeo_domicilio=#ubigeoDomicilio.id:VARCHAR#,
+			ubigeo_nacimiento=#ubigeoNac.id:VARCHAR#,
+			fecha_inscripcion=#fechaInscripcion:DATE#,
+			es_ingreso=#esIngreso#,
+			tp_modalidad_ingreso=#tpModalidadIngreso.codigo:VARCHAR#,
+			descripcion_modalidad_ingreso=#descripcionModalidadIngreso:VARCHAR#,
+			mencion=#mencion.codigo:VARCHAR#,
+			periodo_egreso=#periodoEgreso:VARCHAR#,
+			fecha_sustentacion=#fechaSustentacion:DATE#,
+			tesis01=#tesis01:VARCHAR#,
+			tesis02=#tesis02:VARCHAR#,
+			estudio_postgrado=#estudioPostgrado:INTEGER:0#
+		WHERE
+			id=#id#
+	</update>
+	
+	<delete id="deleteAlumno">
+		DELETE FROM alumno WHERE id=#value#
+	</delete>
+	
+	<resultMap class="dominio.negocio.Facultad" id="result2">
+		<result property="codigo" column="fccodigo" />
+		<result property="nombre" column="fcnombre" />
+	</resultMap>
+	
+	<statement id="getFacultad" resultMap="result2">
+		<![CDATA[
+			SELECT
+				fc.codigo as fccodigo,
+				fc.nombre as fcnombre
+			FROM
+				facultad fc
+			WHERE
+				fc.codigo=#value#
+		]]>
+	</statement>
+	
+	<statement id="getFacultadList" resultMap="result2">
+		<![CDATA[
+			SELECT
+				fc.codigo as fccodigo,
+				fc.nombre as fcnombre
+			FROM
+				facultad fc
+		]]>
+	</statement>
+	
+	<resultMap class="dominio.negocio.TpPostgrado" id="result3">
+		<result property="codigo" column="tpcodigo" />
+		<result property="nombre" column="tpnombre" />
+		<result property="descripcion" column="tpdescripcion" />
+	</resultMap>
+	
+	<statement id="getTpPostgrado" resultMap="result3">
+		<![CDATA[
+			SELECT
+				tp.codigo as tpcodigo,
+				tp.nombre as tpnombre,
+				tp.descripcion as tpdescripcion
+			FROM
+				tp_postgrado tp
+			WHERE
+				tp.codigo=#value#
+		]]>
+	</statement>
+	
+	<statement id="getTpPostgradoList" resultMap="result3">
+		<![CDATA[
+			SELECT
+				tp.codigo as tpcodigo,
+				tp.nombre as tpnombre,
+				tp.descripcion as tpdescripcion
+			FROM
+				tp_postgrado tp
+		]]>
+	</statement>
+	
+	<resultMap class="dominio.negocio.TpModalidadIngreso" id="result4">
+		<result property="codigo" column="micodigo" />
+		<result property="nombre" column="minombre" />
+		<result property="descripcion" column="midescripcion" />
+	</resultMap>
+	
+	<statement id="getTpModalidadIngreso" resultMap="result4">
+		<![CDATA[
+			SELECT
+				mi.codigo as micodigo,
+				mi.nombre as minombre,
+				mi.descripcion as midescripcion
+			FROM
+				tp_modalidad_ingreso mi
+			WHERE
+				mi.codigo=#value#
+		]]>
+	</statement>
+	
+	<statement id="getTpModalidadIngresoList" resultMap="result4">
+		<![CDATA[
+			SELECT
+				mi.codigo as micodigo,
+				mi.nombre as minombre,
+				mi.descripcion as midescripcion
+			FROM
+				tp_modalidad_ingreso mi
+		]]>
+	</statement>
+	
+	<insert id="insertImpresionCertificadoAlumno">
+		INSERT INTO impresion_certificado_alumno(	id_alumno, 		codigo, 			observacion, 			fecha_registro, 	estado) VALUES(
+													#idAlumno#, 	#codigo:VARCHAR#, 	#observacion:VARCHAR#, 	#fechaReg:DATE#,	#estado:VARCHAR#)
+	</insert>
+</sqlMap>

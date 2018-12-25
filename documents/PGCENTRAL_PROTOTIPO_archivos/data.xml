@@ -1,0 +1,1622 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisioDocument>
+	<DocumentProperties>
+		<Title></Title>
+		<HyperlinkBase href=""></HyperlinkBase>
+	</DocumentProperties>
+	<Pages>
+		<Page ID="11" Name="Página-0" NameU="Página-0">
+			<Shapes>
+				<Shape ID="1" UniqueID="{683EF042-5DBB-48E6-ADD0-F55CA0A9A262}" Name="Formulario en blanco" NameU="Blank form" Master="0">
+					<Text>Listado de Clientes de Pago</Text>
+					<XForm>
+						<PinX Unit="MM">5.905511811023621</PinX>
+						<PinY Unit="MM">5.314960629921259</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="10" UniqueID="{FDDE6640-0E20-458C-BFC7-A196E86B5382}" Name="Columna de cuadrícula" NameU="Grid column" Master="9">
+					<Text>Nro Orden Pago</Text>
+					<XForm>
+						<PinX Unit="MM">1.614173228346450</PinX>
+						<PinY Unit="MM">5.461417322834645</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">10</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="31" UniqueID="{90CFD6EF-6E3D-49D1-ADC4-B830805CF682}" Name="Columna de cuadrícula.31" NameU="Grid column.31" Master="9">
+					<Text>Fech. Comp.</Text>
+					<XForm>
+						<PinX Unit="MM">2.598425196850384</PinX>
+						<PinY Unit="MM">5.461417322834645</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">10</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="52" UniqueID="{A6C65637-6D93-4088-95BD-DD5D83517445}" Name="Columna de cuadrícula.52" NameU="Grid column.52" Master="9">
+					<Text>Tip Comp.</Text>
+					<XForm>
+						<PinX Unit="MM">3.582677165354321</PinX>
+						<PinY Unit="MM">5.461417322834645</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">10</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="73" UniqueID="{492C83B1-6B2E-417F-99D8-6F7DF237ADD1}" Name="Columna de cuadrícula.73" NameU="Grid column.73" Master="9">
+					<Text>Nro Comp.</Text>
+					<XForm>
+						<PinX Unit="MM">4.566929133858261</PinX>
+						<PinY Unit="MM">5.461417322834645</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">10</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="94" UniqueID="{49F8B682-2552-4A71-9849-A6EEC0D61D23}" Name="Columna de cuadrícula.94" NameU="Grid column.94" Master="9">
+					<Text>Per. Acad.</Text>
+					<XForm>
+						<PinX Unit="MM">5.551181102362200</PinX>
+						<PinY Unit="MM">5.461417322834646</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">10</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="115" UniqueID="{45C9E856-8DDB-4945-8683-6FD535AD0005}" Name="Columna de cuadrícula.115" NameU="Grid column.115" Master="9">
+					<Text>Cliente</Text>
+					<XForm>
+						<PinX Unit="MM">6.535433070866135</PinX>
+						<PinY Unit="MM">5.461417322834645</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">10</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="137" UniqueID="{5F64A5D5-7274-4D2B-AAFD-4D55859F65F8}" Name="Columna de cuadrícula.137" NameU="Grid column.137" Master="9">
+					<Text>Monto</Text>
+					<XForm>
+						<PinX Unit="MM">9.251968503937004</PinX>
+						<PinY Unit="MM">5.461417322834646</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">10</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="158" UniqueID="{90EFD645-A8CB-4FCD-ACB9-4347654DF2BD}" Name="Columna de cuadrícula.158" NameU="Grid column.158" Master="9">
+					<Text>Moneda</Text>
+					<XForm>
+						<PinX Unit="MM">8.464566929133852</PinX>
+						<PinY Unit="MM">5.461417322834646</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">10</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="179" UniqueID="{DD792FCC-1779-4EE8-90F9-8BEF51A98F66}" Name="Hoja.179" NameU="Sheet.179">
+					<Text>Fecha Comp.:</Text>
+					<XForm>
+						<PinX Unit="MM">1.811023622047244</PinX>
+						<PinY Unit="MM">6.889763779527558</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="180" UniqueID="{A63AC1DF-9DCB-4091-8337-60543F5B0E26}" Name="Cuadro de texto (una línea)" NameU="Text box (single-line)" Master="2">
+					<XForm>
+						<PinX Unit="MM">2.480314960629896</PinX>
+						<PinY Unit="MM">6.889763779527558</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="183" UniqueID="{CC457AD4-664A-42E2-8B2A-E16977BE521D}" Name="Hoja.183" NameU="Sheet.183">
+					<Text>Tipo Comp.:</Text>
+					<XForm>
+						<PinX Unit="MM">1.870078740157480</PinX>
+						<PinY Unit="MM">6.594488188976378</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="184" UniqueID="{62F9F56F-3961-4321-9677-266655F16E9C}" Name="Cuadro combinado" NameU="Combo box" Master="4">
+					<Text>Fact/Bol/...</Text>
+					<XForm>
+						<PinX Unit="MM">2.480314960629896</PinX>
+						<PinY Unit="MM">6.589566929133857</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="193" UniqueID="{44B9B180-F7C7-4C7F-9183-0DAEC51A1544}" Name="Hoja.193" NameU="Sheet.193">
+					<Text>Nro Comp.</Text>
+					<XForm>
+						<PinX Unit="MM">1.889763779527559</PinX>
+						<PinY Unit="MM">6.279527559055119</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="194" UniqueID="{37509AB8-D2A3-452E-8FD1-6F3D6D4AF0D2}" Name="Cuadro de texto (una línea).194" NameU="Text box (single-line).194" Master="2">
+					<XForm>
+						<PinX Unit="MM">2.480314960629896</PinX>
+						<PinY Unit="MM">6.299212598425196</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="197" UniqueID="{6BD91508-8C2C-44B0-8BE3-BEEBAC377C31}" Name="Hoja.197" NameU="Sheet.197">
+					<Text>Per. Acad.:</Text>
+					<XForm>
+						<PinX Unit="MM">4.685039370078739</PinX>
+						<PinY Unit="MM">6.870078740157480</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="198" UniqueID="{BD558EBC-95EC-46F1-A783-98F15260FC13}" Name="Cuadro de texto (una línea).198" NameU="Text box (single-line).198" Master="2">
+					<XForm>
+						<PinX Unit="MM">5.236220472440944</PinX>
+						<PinY Unit="MM">6.889763779527558</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="201" UniqueID="{B8B64C10-FA55-4A4C-992C-1250F89AF256}" Name="Hoja.201" NameU="Sheet.201">
+					<Text>Cliente:</Text>
+					<XForm>
+						<PinX Unit="MM">4.547244094488190</PinX>
+						<PinY Unit="MM">6.594488188976378</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="202" UniqueID="{BEED6D6E-82FB-479D-899B-2E51ECFB7F10}" Name="Cuadro de texto (una línea).202" NameU="Text box (single-line).202" Master="2">
+					<XForm>
+						<PinX Unit="MM">5.236220472440919</PinX>
+						<PinY Unit="MM">6.594488188976377</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="205" UniqueID="{E6184BD6-D7BD-4AA3-B99E-1E582037D309}" Name="Hoja.205" NameU="Sheet.205">
+					<Text> Fac.:</Text>
+					<XForm>
+						<PinX Unit="MM">4.527559055118109</PinX>
+						<PinY Unit="MM">6.299212598425197</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="206" UniqueID="{44299F3A-3204-4F3E-A114-D07614AFC431}" Name="Cuadro combinado.206" NameU="Combo box.206" Master="4">
+					<Text>FAUA/OGP</Text>
+					<XForm>
+						<PinX Unit="MM">5.196850393700786</PinX>
+						<PinY Unit="MM">6.299212598425196</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="215" UniqueID="{34553059-F446-43F9-817B-3AC9B07AB611}" Name="Botón de comando" NameU="Command button" Master="5">
+					<Text>Agregar</Text>
+					<XForm>
+						<PinX Unit="MM">3.774606299212599</PinX>
+						<PinY Unit="MM">3.459645669291338</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="221" UniqueID="{CE78AB35-DE83-4272-A148-7174DCF06111}" Name="Botón de comando.221" NameU="Command button.221" Master="5">
+					<Text>Editar</Text>
+					<XForm>
+						<PinX Unit="MM">4.689960629921259</PinX>
+						<PinY Unit="MM">3.430118110236220</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="227" UniqueID="{7CBEBFCA-FCD0-4E45-BA39-EBADDAD6A23C}" Name="Botón de comando.227" NameU="Command button.227" Master="5">
+					<Text>Borrar</Text>
+					<XForm>
+						<PinX Unit="MM">8.036417322834645</PinX>
+						<PinY Unit="MM">3.385826771653543</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="233" UniqueID="{85D787CD-5135-45D8-9F0D-EEAB48D7D663}" Name="Columna de cuadrícula.233" NameU="Grid column.233" Master="9">
+					<Text>
+					</Text>
+					<XForm>
+						<PinX Unit="MM">1.220472440944882</PinX>
+						<PinY Unit="MM">5.461417322834645</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">10</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="254" UniqueID="{15906589-B2C4-4778-ADB1-C49324C36B48}" Name="Casilla de verificación" NameU="Check box" Master="16">
+					<XForm>
+						<PinX Unit="MM">1.377952755905511</PinX>
+						<PinY Unit="MM">5.182086614173228</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="260" UniqueID="{69D14530-8D6A-47E3-9BF6-C5A4D420C46A}" Name="Casilla de verificación.260" NameU="Check box.260" Master="16">
+					<XForm>
+						<PinX Unit="MM">1.377952755905512</PinX>
+						<PinY Unit="MM">4.999999999999999</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="272" UniqueID="{60648729-3882-4178-961C-BEFAA12628E5}" Name="Botón de comando.272" NameU="Command button.272" Master="5">
+					<Text>Cerrar</Text>
+					<XForm>
+						<PinX Unit="MM">5.708661417322834</PinX>
+						<PinY Unit="MM">3.430118110236220</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="278" UniqueID="{5F642C71-B38E-45E1-8F6F-6FA5D0B5F8EC}" Name="Botón de comando.278" NameU="Command button.278" Master="5">
+					<Text>Exportar a Excel</Text>
+					<XForm>
+						<PinX Unit="MM">6.889763779527558</PinX>
+						<PinY Unit="MM">3.430118110236220</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="136" UniqueID="{E76F1C44-1403-48D0-B8B6-24240B8BBDF3}" Name="Botón de comando.136" NameU="Command button.136" Master="5">
+					<Text>Buscar</Text>
+					<XForm>
+						<PinX Unit="MM">4.365157480314960</PinX>
+						<PinY Unit="MM">5.989173228346457</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="289" UniqueID="{70806810-129F-4FC3-995F-7FA3DDA9CF01}" Name="Botón de comando.289" NameU="Command button.289" Master="5">
+					<Text>Limpiar</Text>
+					<XForm>
+						<PinX Unit="MM">5.546259842519684</PinX>
+						<PinY Unit="MM">5.989173228346457</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+		<Page ID="0" Name="Página-1" NameU="Page-1">
+			<Shapes>
+				<Shape ID="1" UniqueID="{3BDFADE6-9BB4-46B7-A512-DAD6E5DF4828}" Name="Formulario en blanco" NameU="Blank form" Master="0">
+					<Text>Título del formulario</Text>
+					<XForm>
+						<PinX Unit="MM">5.757874015748031</PinX>
+						<PinY Unit="MM">4.094488188976379</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="32" UniqueID="{B10F6AD6-5C00-42F0-8D1B-BCCF513437BF}" Name="Hoja.32" NameU="Sheet.32">
+					<Text>FECHA(DD/MM/YYYY):</Text>
+					<XForm>
+						<PinX Unit="MM">3.875492125984252</PinX>
+						<PinY Unit="MM">7.283464566929133</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="33" UniqueID="{672738C8-FC40-4162-AE11-2319A951BDC7}" Name="Cuadro de texto (una línea)" NameU="Text box (single-line)" Master="2">
+					<XForm>
+						<PinX Unit="MM">4.822834645669292</PinX>
+						<PinY Unit="MM">7.283464566929133</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="36" UniqueID="{8200EF78-8870-4529-9349-811B03BFF6A2}" Name="Hoja.36" NameU="Sheet.36">
+					<Text>NR ORDEN PAGO:</Text>
+					<XForm>
+						<PinX Unit="MM">3.740157480314962</PinX>
+						<PinY Unit="MM">6.988188976377953</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="37" UniqueID="{920E0421-AD0B-463D-9DFE-93B604A543B9}" Name="Cuadro de texto (una línea).37" NameU="Text box (single-line).37" Master="2">
+					<XForm>
+						<PinX Unit="MM">4.862204724409422</PinX>
+						<PinY Unit="MM">6.988188976377952</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="40" UniqueID="{DB60C9B5-666C-4DA5-934B-AA377AB397E1}" Name="Hoja.40" NameU="Sheet.40">
+					<XForm>
+						<PinX Unit="MM">5.297736220472441</PinX>
+						<PinY Unit="MM">5.590551181102362</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="10" UniqueID="{EFB2B521-F93E-446F-9720-C8C6B69D27F4}" Name="Hoja.10" NameU="Sheet.10">
+					<Text>CLIENTE:</Text>
+					<XForm>
+						<PinX Unit="MM">3.444881889763780</PinX>
+						<PinY Unit="MM">5.600393700787400</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="11" UniqueID="{8C988CC5-5471-48EC-BD14-740E202B6CB0}" Name="Cuadro combinado" NameU="Combo box" Master="4">
+					<XForm>
+						<PinX Unit="MM">3.937007874015748</PinX>
+						<PinY Unit="MM">5.605314960629920</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="20" UniqueID="{3DC7DDFE-9F85-4DE1-B7E1-8A7874351786}" Name="Botón de comando" NameU="Command button" Master="5">
+					<Text>Alumno</Text>
+					<XForm>
+						<PinX Unit="MM">6.461614173228346</PinX>
+						<PinY Unit="MM">5.585629921259841</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="26" UniqueID="{2CD7065C-D9A3-4EFB-B11A-417E61AF6867}" Name="Botón de comando.26" NameU="Command button.26" Master="5">
+					<Text>Otro</Text>
+					<XForm>
+						<PinX Unit="MM">7.283464566929133</PinX>
+						<PinY Unit="MM">5.585629921259841</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="45" UniqueID="{51A27D1B-D120-42BE-896B-8C7D24DE5547}" Name="Hoja.45" NameU="Sheet.45">
+					<Text>TIPO DE DOC DE PAGO:</Text>
+					<XForm>
+						<PinX Unit="MM">3.877952755905511</PinX>
+						<PinY Unit="MM">6.673228346456693</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="46" UniqueID="{0B391884-6152-459C-AE2F-74AABB0728AC}" Name="Cuadro combinado" NameU="Combo box" Master="4">
+					<Text>BOLETA/FACTURA/DXP/ROCEF/Nº DE EXP-OCEF</Text>
+					<XForm>
+						<PinX Unit="MM">5.118110236220471</PinX>
+						<PinY Unit="MM">6.692913385826771</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="55" UniqueID="{7442FAF6-A0F5-4824-A431-5D90CA5ACD1A}" Name="Hoja.55" NameU="Sheet.55">
+					<Text>NRO DE DOC PAGO:</Text>
+					<XForm>
+						<PinX Unit="MM">3.740157480314961</PinX>
+						<PinY Unit="MM">6.377952755905512</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="56" UniqueID="{FCBBD034-5FB0-4BAC-BDE8-08CDBD17391A}" Name="Cuadro de texto (una línea).56" NameU="Text box (single-line).56" Master="2">
+					<XForm>
+						<PinX Unit="MM">5.196850393700786</PinX>
+						<PinY Unit="MM">6.397637795275590</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="59" UniqueID="{22818EB6-CFB3-4958-8FC9-3E2E2CDCBD90}" Name="Hoja.59" NameU="Sheet.59">
+					<Text>PERIODO ACADEMICO:</Text>
+					<XForm>
+						<PinX Unit="MM">4.035433070866142</PinX>
+						<PinY Unit="MM">6.023622047244095</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="60" UniqueID="{DCB317C2-02BB-4A7A-9E97-F62D7C44485F}" Name="Cuadro de texto (una línea).60" NameU="Text box (single-line).60" Master="2">
+					<XForm>
+						<PinX Unit="MM">5.196850393700761</PinX>
+						<PinY Unit="MM">6.043307086614173</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="63" UniqueID="{5F8A1EDF-6460-4AD3-A2B9-A7C495385A41}" Name="Hoja.63" NameU="Sheet.63">
+					<Text>FACULTAD/OFICINA:</Text>
+					<XForm>
+						<PinX Unit="MM">3.858267716535433</PinX>
+						<PinY Unit="MM">5.177165354330708</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="64" UniqueID="{224AFEDC-8E9E-4A7E-B8CD-076FC564C31F}" Name="Cuadro combinado.64" NameU="Combo box.64" Master="4">
+					<XForm>
+						<PinX Unit="MM">5.236220472440944</PinX>
+						<PinY Unit="MM">5.211614173228346</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="73" UniqueID="{DF07E741-1580-42CB-A2EB-9F4F7F12D6C1}" Name="Hoja.73" NameU="Sheet.73">
+					<Text>TIPO DE ESTUDIO:</Text>
+					<XForm>
+						<PinX Unit="MM">3.838582677165354</PinX>
+						<PinY Unit="MM">4.783464566929133</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="74" UniqueID="{086496A2-54ED-44A5-A119-F40145194161}" Name="Cuadro combinado.74" NameU="Combo box.74" Master="4">
+					<XForm>
+						<PinX Unit="MM">5.196850393700786</PinX>
+						<PinY Unit="MM">4.817913385826770</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="83" UniqueID="{62BC1453-9B03-4C4E-823A-7803FC9F99C1}" Name="Hoja.83" NameU="Sheet.83">
+					<Text>ESP/MENCION:</Text>
+					<XForm>
+						<PinX Unit="MM">3.740157480314960</PinX>
+						<PinY Unit="MM">4.527559055118110</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="84" UniqueID="{8A3EC98B-D5E7-4A79-9088-829C53CDBA27}" Name="Cuadro de texto (una línea).84" NameU="Text box (single-line).84" Master="2">
+					<XForm>
+						<PinX Unit="MM">5.118110236220471</PinX>
+						<PinY Unit="MM">4.527559055118110</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="41" UniqueID="{EB9E9F13-608C-4B1B-9B7B-6FA5492E7F8A}" Name="Cuadro de grupo" NameU="Group box" Master="8">
+					<Text>CONCEPTOS</Text>
+					<XForm>
+						<PinX Unit="MM">5.157480314960630</PinX>
+						<PinY Unit="MM">3.287401574803150</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="42" UniqueID="{DF7483FF-EF34-4838-903D-99B6AB780D8E}" Name="Columna de cuadrícula" NameU="Grid column" Master="9">
+					<Text>PARTIDA</Text>
+					<XForm>
+						<PinX Unit="MM">3.149606299212599</PinX>
+						<PinY Unit="MM">3.655905511811023</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">4</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="105" UniqueID="{2BECB9D3-BFB1-4728-A2F0-595924AD393A}" Name="Columna de cuadrícula.105" NameU="Grid column.105" Master="9">
+					<Text>CONCEPTO</Text>
+					<XForm>
+						<PinX Unit="MM">3.937007874015748</PinX>
+						<PinY Unit="MM">3.661417322834645</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">4</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="126" UniqueID="{28D49AC1-0EBB-4E8A-AF18-9AA38CBDD509}" Name="Columna de cuadrícula.126" NameU="Grid column.126" Master="9">
+					<Text>MONTO</Text>
+					<XForm>
+						<PinX Unit="MM">5.511686587632444</PinX>
+						<PinY Unit="MM">3.661417322834645</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">4</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="191" UniqueID="{CC8C1AB2-1517-457B-A36C-B57741E10249}" Name="Hoja.191" NameU="Sheet.191">
+					<XForm>
+						<PinX Unit="MM">5.177165354330708</PinX>
+						<PinY Unit="MM">1.889763779527559</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="147" UniqueID="{0101D2C9-E10C-434B-A973-15DE8FDF79A8}" Name="Hoja.147" NameU="Sheet.147">
+					<Text>OBSERVACIONES:</Text>
+					<XForm>
+						<PinX Unit="MM">3.779527559055118</PinX>
+						<PinY Unit="MM">2.066929133858268</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="148" UniqueID="{6404441B-D11C-46DF-AFC3-BFB18B3E6860}" Name="Cuadro de texto (varias líneas)" NameU="Text box (multi-line)" Master="10">
+					<XForm>
+						<PinX Unit="MM">6.102362204724409</PinX>
+						<PinY Unit="MM">2.263779527559055</PinY>
+					</XForm>
+					<Prop ID="1" Name="VerticalBar" NameU="VerticalBar">
+						<Value Unit="STR">50</Value>
+						<Label>Tamaño del botón de la barra de desplazamiento vertical (%)</Label>
+					</Prop>
+					<Prop ID="2" Name="HorizontalBar" NameU="HorizontalBar">
+						<Value Unit="STR">50</Value>
+						<Label>Tamaño del botón de la barra de desplazamiento horizontal (%)</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="192" UniqueID="{33390D0C-623F-408B-99B1-6E9835E07670}" Name="Hoja.192" NameU="Sheet.192">
+					<Text>MONEDA:</Text>
+					<XForm>
+						<PinX Unit="MM">3.543307086614173</PinX>
+						<PinY Unit="MM">4.232283464566929</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="193" UniqueID="{1E1FFB14-7576-4F70-AC23-C022DC91B2B4}" Name="Cuadro combinado.193" NameU="Combo box.193" Master="4">
+					<Text>SOLES / DOLARES</Text>
+					<XForm>
+						<PinX Unit="MM">4.251968503937007</PinX>
+						<PinY Unit="MM">4.227362204724409</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="202" UniqueID="{365E0C5E-A76C-4F55-9625-DD882D645ED3}" Name="Hoja.202" NameU="Sheet.202">
+					<Text>TOTAL:</Text>
+					<XForm>
+						<PinX Unit="MM">3.543307086614173</PinX>
+						<PinY Unit="MM">2.851574803149606</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="203" UniqueID="{8C2C8F90-14DE-4592-ABE9-72A4CA43DA43}" Name="Cuadro de texto (una línea).203" NameU="Text box (single-line).203" Master="2">
+					<Text>1232.32</Text>
+					<XForm>
+						<PinX Unit="MM">5.511811023622046</PinX>
+						<PinY Unit="MM">2.854330708661417</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="206" UniqueID="{89981FB2-8049-4158-B9C1-086C9D565243}" Name="Hoja.206" NameU="Sheet.206">
+					<Text>NRO. CUOTAS:</Text>
+					<XForm>
+						<PinX Unit="MM">3.937007874015748</PinX>
+						<PinY Unit="MM">1.082677165354331</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="207" UniqueID="{082A04C6-0194-4BF3-91E9-5D266C3BAB13}" Name="Cuadro combinado.207" NameU="Combo box.207" Master="4">
+					<Text>0-4</Text>
+					<XForm>
+						<PinX Unit="MM">4.803149606299212</PinX>
+						<PinY Unit="MM">1.087598425196851</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="216" UniqueID="{8E833602-328B-4176-9F0D-C89FAC06411D}" Name="Control de ficha (fichas)" NameU="Tab control (tabs)" Master="11">
+					<Text>COMPROBANTE</Text>
+					<XForm>
+						<PinX Unit="MM">3.544072003217266</PinX>
+						<PinY Unit="MM">7.677165354330708</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="222" UniqueID="{5FB58F49-4230-484B-9D69-5217726AA1C7}" Name="Hoja.222" NameU="Sheet.222">
+					<Text>ESTADO DEL PAGO:</Text>
+					<XForm>
+						<PinX Unit="MM">3.838582677165356</PinX>
+						<PinY Unit="MM">0.688976377952756</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="223" UniqueID="{E0579963-62E3-497B-85A2-BB5D6C423BC7}" Name="Cuadro combinado.223" NameU="Combo box.223" Master="4">
+					<Text>CANCELADO/POR PAGAR</Text>
+					<XForm>
+						<PinX Unit="MM">4.842519685039345</PinX>
+						<PinY Unit="MM">0.684055118110236</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="232" UniqueID="{D38E6260-6282-48D4-85AB-245A1EC3FBF3}" Name="Botón de comando" NameU="Command button" Master="5">
+					<Text>Grabar</Text>
+					<XForm>
+						<PinX Unit="MM">4.493110236220472</PinX>
+						<PinY Unit="MM">0.280511811023622</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="238" UniqueID="{559E2598-E300-4FD2-A147-C9489219BEB8}" Name="Botón de comando.238" NameU="Command button.238" Master="5">
+					<Text>Cancelar</Text>
+					<XForm>
+						<PinX Unit="MM">5.546259842519684</PinX>
+						<PinY Unit="MM">0.280511811023622</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="244" UniqueID="{ADAE4217-7B35-409A-92F4-0156197D1FD0}" Name="Botón de comando.244" NameU="Command button.244" Master="5">
+					<Text>Agregar</Text>
+					<XForm>
+						<PinX Unit="MM">6.727362204724409</PinX>
+						<PinY Unit="MM">3.823818897637795</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="250" UniqueID="{609BAA65-2E0A-42BA-B533-11C794D63AA5}" Name="Botón de comando.250" NameU="Command button.250" Master="5">
+					<Text>Borrar</Text>
+					<XForm>
+						<PinX Unit="MM">6.727362204724409</PinX>
+						<PinY Unit="MM">3.262795275590551</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="256" UniqueID="{66AADE33-B2F4-4A00-AA34-4A4BCBFC435B}" Name="Cuadro combinado.256" NameU="Combo box.256" Master="4">
+					<Text>Partida</Text>
+					<XForm>
+						<PinX Unit="MM">3.149606299212598</PinX>
+						<PinY Unit="MM">3.833661417322834</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="265" UniqueID="{B17FC8FC-84B3-40E2-B89A-BCFD2DEBBA1B}" Name="Cuadro de texto (una línea).265" NameU="Text box (single-line).265" Master="2">
+					<Text>(Solo lectura)</Text>
+					<XForm>
+						<PinX Unit="MM">3.937007874015748</PinX>
+						<PinY Unit="MM">3.838582677165354</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="268" UniqueID="{A977D179-260D-4209-A6FC-69F2E544ACF2}" Name="Cuadro de texto (una línea).268" NameU="Text box (single-line).268" Master="2">
+					<Text>(Solo lectura)</Text>
+					<XForm>
+						<PinX Unit="MM">5.511811023622045</PinX>
+						<PinY Unit="MM">3.838582677165354</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="271" UniqueID="{50D3D7EE-D581-4F32-B729-48EEBD067B56}" Name="Cuadro de texto (una línea).271" NameU="Text box (single-line).271" Master="2">
+					<XForm>
+						<PinX Unit="MM">7.677165354330681</PinX>
+						<PinY Unit="MM">4.232283464566929</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="274" UniqueID="{73A63B6E-8B80-4E42-BFDC-F3BAA440BF3F}" Name="Hoja.274" NameU="Sheet.274">
+					<Text>Tipo de Camb.:</Text>
+					<XForm>
+						<PinX Unit="MM">7.027559055118110</PinX>
+						<PinY Unit="MM">4.232283464566929</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="275" UniqueID="{70F7E04B-F111-44AA-BAA4-A995B69A2EDF}" Name="Hoja.275" NameU="Sheet.275">
+					<Text>El campo ‘Estado de Pago’ debe de desactivarse al iniciar el campo ‘Nro de cuotas’ mayor a cero</Text>
+					<XForm>
+						<PinX Unit="MM">1.220472440944882</PinX>
+						<PinY Unit="MM">1.181102362204724</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="276" UniqueID="{4FEA9BDD-26DB-4C43-A381-DC0F8A4DF85B}" Name="Hoja.276" NameU="Sheet.276">
+					<Text>Si se inicia el campo ‘Moneda’ a dolares, debe de obligarse a ingresar el campo ‘Tipo de cambio’ a un valor númerico del día.</Text>
+					<XForm>
+						<PinX Unit="MM">1.449256342957130</PinX>
+						<PinY Unit="MM">4.371773840769905</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+		<Page ID="4" Name="Página-2" NameU="Page-2">
+			<Shapes>
+				<Shape ID="1" UniqueID="{6C81C3DB-3ED8-4FB3-9FD9-0F090342750D}" Name="Formulario en blanco" NameU="Blank form" Master="0">
+					<Text>Título del formulario</Text>
+					<XForm>
+						<PinX Unit="MM">4.645669291338582</PinX>
+						<PinY Unit="MM">5.039370078740157</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="10" UniqueID="{E09FB576-5D3A-4DC6-A19D-9442B5B7A81B}" Name="Control de ficha (fichas)" NameU="Tab control (tabs)" Master="11">
+					<Text>CUOTAS/ARMADAS</Text>
+					<XForm>
+						<PinX Unit="MM">2.134270760358860</PinX>
+						<PinY Unit="MM">6.850393700787402</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="16" UniqueID="{7ABBA200-7C0C-4F34-84A6-EACB66E52AF5}" Name="Columna de cuadrícula" NameU="Grid column" Master="9">
+					<Text>Fecha</Text>
+					<XForm>
+						<PinX Unit="MM">2.066929133858266</PinX>
+						<PinY Unit="MM">6.496062992125983</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">10</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="37" UniqueID="{BF045A54-2351-42FA-BC36-6A978329860E}" Name="Columna de cuadrícula.37" NameU="Grid column.37" Master="9">
+					<Text>Descripcion</Text>
+					<XForm>
+						<PinX Unit="MM">3.051181102362203</PinX>
+						<PinY Unit="MM">6.496062992125983</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">10</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="58" UniqueID="{F5061801-C6F9-41FE-A948-87C4AC938A1A}" Name="Columna de cuadrícula.58" NameU="Grid column.58" Master="9">
+					<Text>Monto</Text>
+					<XForm>
+						<PinX Unit="MM">4.606299212598425</PinX>
+						<PinY Unit="MM">6.496062992125983</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">10</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="79" UniqueID="{7CEF34CF-BE0C-4E6A-9339-F11B038475B0}" Name="Columna de cuadrícula.79" NameU="Grid column.79" Master="9">
+					<Text>Estado</Text>
+					<XForm>
+						<PinX Unit="MM">5.590551181102362</PinX>
+						<PinY Unit="MM">6.496062992125983</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">10</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="100" UniqueID="{C491226D-DDFA-44D3-9C39-16BD46C702BE}" Name="Botón de comando" NameU="Command button" Master="5">
+					<Text>Grabar</Text>
+					<XForm>
+						<PinX Unit="MM">4.000984251968504</PinX>
+						<PinY Unit="MM">2.952755905511811</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="106" UniqueID="{12E82053-A7B2-4CA0-9A1F-CC6D94376D60}" Name="Botón de comando.238" NameU="Command button.238" Master="5">
+					<Text>Cancelar</Text>
+					<XForm>
+						<PinX Unit="MM">5.054133858267717</PinX>
+						<PinY Unit="MM">2.952755905511811</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="112" UniqueID="{22FD75A6-4E2E-44B4-865E-D9DCA62276E2}" Name="Cuadro combinado" NameU="Combo box" Master="4">
+					<Text>Cancelado/Por Pagar</Text>
+					<XForm>
+						<PinX Unit="MM">5.590551181102362</PinX>
+						<PinY Unit="MM">6.205708661417322</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="121" UniqueID="{06D10B54-5A2A-4C1F-887B-2BED3203C239}" Name="Hoja.121" NameU="Sheet.121">
+					<Text>El Nro de  cuotas está en función del número elegido en el campo ‘Nro de Cuotas’ en la pesta de ‘Comprobante’</Text>
+					<XForm>
+						<PinX Unit="MM">8.983814523184602</PinX>
+						<PinY Unit="MM">6.554024496937883</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+		<Page ID="5" Name="Página-3" NameU="Page-3">
+			<Shapes>
+				<Shape ID="1" UniqueID="{3C0C3BB9-5B20-4A33-8E5D-DA943D8D3255}" Name="Formulario en blanco" NameU="Blank form" Master="0">
+					<Text>Busqueda de Alumnos-Clientes</Text>
+					<XForm>
+						<PinX Unit="MM">2.893700787401575</PinX>
+						<PinY Unit="MM">6.604330708661419</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="10" UniqueID="{25D387F6-16B1-4460-896D-B6B5183AE831}" Name="Formulario en blanco.10" NameU="Blank form.10" Master="0">
+					<Text>Otros Clientes</Text>
+					<XForm>
+						<PinX Unit="MM">8.759842519685043</PinX>
+						<PinY Unit="MM">6.328740157480315</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="19" UniqueID="{4127A2D4-42E4-454A-835F-3F4CB55F6BE4}" Name="Cuadro de texto (una línea)" NameU="Text box (single-line)" Master="2">
+					<XForm>
+						<PinX Unit="MM">7.952755905511785</PinX>
+						<PinY Unit="MM">6.889763779527558</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="22" UniqueID="{991121D9-E744-4782-9A89-38834C23F207}" Name="Hoja.22" NameU="Sheet.22">
+					<Text>Tipo de Cliente</Text>
+					<XForm>
+						<PinX Unit="MM">6.791338582677165</PinX>
+						<PinY Unit="MM">7.578740157480315</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="23" UniqueID="{A566B7F5-AADD-496F-A1D2-EAE2EF098FBB}" Name="Hoja.23" NameU="Sheet.23">
+					<Text>Tipo de Identificacion</Text>
+					<XForm>
+						<PinX Unit="MM">7.027559055118110</PinX>
+						<PinY Unit="MM">7.224409448818897</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="24" UniqueID="{3098B1D3-85E9-4882-ADFD-2C1D041FE6C6}" Name="Hoja.24" NameU="Sheet.24">
+					<Text>Nro Identificacion</Text>
+					<XForm>
+						<PinX Unit="MM">6.889763779527558</PinX>
+						<PinY Unit="MM">6.889763779527558</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="25" UniqueID="{A8B2BD0C-2D13-4468-9896-78828E776D1C}" Name="Hoja.25" NameU="Sheet.25">
+					<Text>Razon Social/Nombre Completo</Text>
+					<XForm>
+						<PinX Unit="MM">7.480314960629920</PinX>
+						<PinY Unit="MM">6.594488188976377</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="26" UniqueID="{3A2B7772-83E0-478E-966B-AB4402ECA6B4}" Name="Cuadro combinado" NameU="Combo box" Master="4">
+					<Text>DNI/RUC/COD DOCENTE/COD UNI</Text>
+					<XForm>
+						<PinX Unit="MM">7.992125984251969</PinX>
+						<PinY Unit="MM">7.268700787401574</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="35" UniqueID="{4237445A-BA7A-4150-8BE0-2D55819FF247}" Name="Cuadro combinado.35" NameU="Combo box.35" Master="4">
+					<Text>NATURAL/JURIDICO</Text>
+					<XForm>
+						<PinX Unit="MM">7.677165354330708</PinX>
+						<PinY Unit="MM">7.583661417322833</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="44" UniqueID="{41759D4B-73E2-4CE7-874C-73A834BD7D89}" Name="Cuadro de texto (una línea).44" NameU="Text box (single-line).44" Master="2">
+					<XForm>
+						<PinX Unit="MM">8.937007874015750</PinX>
+						<PinY Unit="MM">6.594488188976377</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="47" UniqueID="{D60C6965-B458-416C-B923-D9C2EC88A4B2}" Name="Cuadro de grupo" NameU="Group box" Master="8">
+					<Text>Integrantes</Text>
+					<XForm>
+						<PinX Unit="MM">8.700787401574804</PinX>
+						<PinY Unit="MM">5.708661417322834</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="48" UniqueID="{A2663CFC-31C6-493A-8B6A-36762B754B7C}" Name="Columna de cuadrícula" NameU="Grid column" Master="9">
+					<Text>NOMBRES</Text>
+					<XForm>
+						<PinX Unit="MM">7.322834645669292</PinX>
+						<PinY Unit="MM">6.299212598425196</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">10</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="69" UniqueID="{F960D98D-4B7C-4A2F-B551-064989B800D9}" Name="Cuadro de texto (una línea).69" NameU="Text box (single-line).69" Master="2">
+					<XForm>
+						<PinX Unit="MM">7.322834645669292</PinX>
+						<PinY Unit="MM">5.216535433070866</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="72" UniqueID="{085C1AAE-3A0B-4161-809E-63595FA2A8B4}" Name="Botón de comando" NameU="Command button" Master="5">
+					<Text>AGREGAR</Text>
+					<XForm>
+						<PinX Unit="MM">6.815944881889764</PinX>
+						<PinY Unit="MM">5.201771653543307</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="78" UniqueID="{A4FC300F-8F8D-4C57-A37A-E91C17DC96B4}" Name="Botón de comando.78" NameU="Command button.78" Master="5">
+					<Text>Grabar</Text>
+					<XForm>
+						<PinX Unit="MM">8.626968503937007</PinX>
+						<PinY Unit="MM">4.808070866141732</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="84" UniqueID="{4B3AAD97-5BC8-4317-BAF3-4C42F77B2F28}" Name="Botón de comando.238" NameU="Command button.238" Master="5">
+					<Text>Cancelar</Text>
+					<XForm>
+						<PinX Unit="MM">9.680118110236220</PinX>
+						<PinY Unit="MM">4.808070866141732</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="90" UniqueID="{1E54FABB-A1A6-4C5B-8C1D-619289F99287}" Name="Columna de cuadrícula.90" NameU="Grid column.90" Master="9">
+					<Text>Alumnos</Text>
+					<XForm>
+						<PinX Unit="MM">0.196850393700787</PinX>
+						<PinY Unit="MM">6.889763779527558</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">7</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="111" UniqueID="{C65DAA6A-7060-4B6D-ADD8-81275BF17967}" Name="Botón de comando.111" NameU="Command button.111" Master="5">
+					<Text>Buscar</Text>
+					<XForm>
+						<PinX Unit="MM">2.524606299212598</PinX>
+						<PinY Unit="MM">7.086614173228346</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="117" UniqueID="{1DD4F389-4F77-440D-8FCC-A7417B002C21}" Name="Cuadro de texto (una línea).117" NameU="Text box (single-line).117" Master="2">
+					<XForm>
+						<PinX Unit="MM">1.968503937007874</PinX>
+						<PinY Unit="MM">7.381889763779527</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="120" UniqueID="{88310652-3FCF-43D1-A3C7-56E7DED27373}" Name="Botón de comando.120" NameU="Command button.120" Master="5">
+					<Text>Borrar</Text>
+					<XForm>
+						<PinX Unit="MM">6.855314960629920</PinX>
+						<PinY Unit="MM">5.821850393700787</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="126" UniqueID="{537325EF-1CB0-4529-B587-FF796774BAD1}" Name="Hoja.126" NameU="Sheet.126">
+					<Text>Nombres:</Text>
+					<XForm>
+						<PinX Unit="MM">1.141732283464567</PinX>
+						<PinY Unit="MM">7.381889763779527</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="127" UniqueID="{0D91C328-9782-47E0-A7DD-16058BDBAD68}" Name="Botón de comando.127" NameU="Command button.127" Master="5">
+					<Text>Seleccionar</Text>
+					<XForm>
+						<PinX Unit="MM">2.524606299212598</PinX>
+						<PinY Unit="MM">5.467519685039370</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="133" UniqueID="{8FB8B545-6ADF-47CD-A712-67D367615BA3}" Name="Hoja.133" NameU="Sheet.133">
+					<Text>Si es juridico, se debe de mostrar la Razon Social y los Integrantes, Si es Personal, se debe de mostrar el nombre completo y ocultar los Integrantes (es uno solo)</Text>
+					<XForm>
+						<PinX Unit="MM">9.311023622047243</PinX>
+						<PinY Unit="MM">3.523622047244094</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+		<Page ID="6" Name="Página-4" NameU="Page-4">
+			<Shapes>
+				<Shape ID="1" UniqueID="{4B4E9FE7-561A-4A54-BF8A-B62935EB6AF1}" Name="Formulario en blanco" NameU="Blank form" Master="0">
+					<Text>Listado de Periodos Rectorales de Partidas</Text>
+					<XForm>
+						<PinX Unit="MM">4.822834645669291</PinX>
+						<PinY Unit="MM">5.905511811023622</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="10" UniqueID="{A9BA0E8F-28F2-4C94-BDDE-99E7DE756507}" Name="Columna de cuadrícula" NameU="Grid column" Master="9">
+					<Text>NRO RESO. RECT.</Text>
+					<XForm>
+						<PinX Unit="MM">1.082677165354329</PinX>
+						<PinY Unit="MM">5.984251968503936</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">6</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="31" UniqueID="{4DF02623-2D16-43E4-B76D-9D5332C8BC11}" Name="Columna de cuadrícula.31" NameU="Grid column.31" Master="9">
+					<Text>FECHA EMISION</Text>
+					<XForm>
+						<PinX Unit="MM">2.139514179415863</PinX>
+						<PinY Unit="MM">5.984251968503936</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">6</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="52" UniqueID="{21DB092C-13F1-43BF-87B2-BC1E799F1C4E}" Name="Columna de cuadrícula.52" NameU="Grid column.52" Master="9">
+					<Text>DESCRIPCION</Text>
+					<XForm>
+						<PinX Unit="MM">5.092270084927674</PinX>
+						<PinY Unit="MM">5.984251968503936</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">6</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="73" UniqueID="{43EDD4F3-778F-4200-A728-5BFA79A9F88D}" Name="Columna de cuadrícula.73" NameU="Grid column.73" Master="9">
+					<Text>FECHA VIGENCIA</Text>
+					<XForm>
+						<PinX Unit="MM">3.110236220472441</PinX>
+						<PinY Unit="MM">5.984251968503937</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">6</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="94" UniqueID="{850549CD-6930-4126-89BE-2DB17A9415EF}" Name="Columna de cuadrícula.94" NameU="Grid column.94" Master="9">
+					<Text>ESTADO</Text>
+					<XForm>
+						<PinX Unit="MM">7.480314960629917</PinX>
+						<PinY Unit="MM">5.984251968503936</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">6</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="115" UniqueID="{B0EE2EEE-4CAD-4599-927D-0B0EF90E4A52}" Name="Columna de cuadrícula.115" NameU="Grid column.115" Master="9">
+					<Text>FECHA TERMINO</Text>
+					<XForm>
+						<PinX Unit="MM">4.133858267716535</PinX>
+						<PinY Unit="MM">5.984251968503936</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">6</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="136" UniqueID="{0A0E5809-1591-4E1B-AEC7-810A740E7FB0}" Name="Botón de comando" NameU="Command button" Master="5">
+					<Text>BUSCAR</Text>
+					<XForm>
+						<PinX Unit="MM">3.149606299212598</PinX>
+						<PinY Unit="MM">6.215551181102362</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="142" UniqueID="{0168B057-B9B8-43BD-9B9E-070BB025F134}" Name="Botón de comando.142" NameU="Command button.142" Master="5">
+					<Text>CERRAR</Text>
+					<XForm>
+						<PinX Unit="MM">4.168307086614173</PinX>
+						<PinY Unit="MM">6.215551181102362</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="148" UniqueID="{E748414A-675C-4852-87E9-B4750740C0B9}" Name="Hoja.148" NameU="Sheet.148">
+					<Text>Nro Reso. Rect.</Text>
+					<XForm>
+						<PinX Unit="MM">1.870078740157480</PinX>
+						<PinY Unit="MM">6.830708661417322</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="149" UniqueID="{04A99327-4725-4F1D-B6CB-F5B6A22E82AB}" Name="Cuadro de texto (una línea)" NameU="Text box (single-line)" Master="2">
+					<XForm>
+						<PinX Unit="MM">2.559055118110236</PinX>
+						<PinY Unit="MM">6.889763779527558</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="152" UniqueID="{5DD2DCFF-C731-4BB0-B9C6-1FB502BB77FE}" Name="Hoja.152" NameU="Sheet.152">
+					<Text>Fecha Emision</Text>
+					<XForm>
+						<PinX Unit="MM">1.870078740157480</PinX>
+						<PinY Unit="MM">6.594488188976377</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="153" UniqueID="{D198A0FA-D2B3-4B73-8928-2BA0DC3FF68D}" Name="Hoja.153" NameU="Sheet.153">
+					<Text>Fecha Vigencia:</Text>
+					<XForm>
+						<PinX Unit="MM">4.606299212598425</PinX>
+						<PinY Unit="MM">6.594488188976378</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="154" UniqueID="{AE2FD50B-F09B-4388-AAF1-25BFA6C94399}" Name="Hoja.154" NameU="Sheet.154">
+					<Text>Estado:</Text>
+					<XForm>
+						<PinX Unit="MM">4.822834645669291</PinX>
+						<PinY Unit="MM">6.889763779527559</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="155" UniqueID="{012CCC23-2381-45C0-B3BC-94A4F3D2E60A}" Name="Cuadro de texto (una línea).155" NameU="Text box (single-line).155" Master="2">
+					<XForm>
+						<PinX Unit="MM">2.559055118110236</PinX>
+						<PinY Unit="MM">6.594488188976378</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="158" UniqueID="{7B2153B6-BCD6-4A6A-BE33-7622AF1703C0}" Name="Cuadro de texto (una línea).158" NameU="Text box (single-line).158" Master="2">
+					<XForm>
+						<PinX Unit="MM">5.629921259842520</PinX>
+						<PinY Unit="MM">6.594488188976378</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="161" UniqueID="{C2A48ED5-F7C0-4066-8F16-26024E69C3E1}" Name="Cuadro combinado" NameU="Combo box" Master="4">
+					<Text>Vigente/Caduco/Anulado</Text>
+					<XForm>
+						<PinX Unit="MM">5.433070866141706</PinX>
+						<PinY Unit="MM">6.889763779527558</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="170" UniqueID="{46F38238-E5F9-479A-8B12-E29AB873A100}" Name="Botón de comando.170" NameU="Command button.170" Master="5">
+					<Text>Ver Detalles de Partidas</Text>
+					<XForm>
+						<PinX Unit="MM">5.046238820251653</PinX>
+						<PinY Unit="MM">4.724409448818897</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="176" UniqueID="{A7D73EAC-BF04-41D6-BB4E-D851B66FD09D}" Name="Botón de comando.176" NameU="Command button.176" Master="5">
+					<Text>Agregar</Text>
+					<XForm>
+						<PinX Unit="MM">2.987919751246947</PinX>
+						<PinY Unit="MM">4.724409448818897</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="182" UniqueID="{67C2AA80-E9A0-415E-BC40-B7FE2385857B}" Name="Botón de comando.182" NameU="Command button.182" Master="5">
+					<Text>Editar</Text>
+					<XForm>
+						<PinX Unit="MM">3.892716535433071</PinX>
+						<PinY Unit="MM">4.724409448818897</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+		<Page ID="10" Name="Página-4_1" NameU="Página-4_1">
+			<Shapes>
+				<Shape ID="1" UniqueID="{14751F67-447D-47CD-B76E-9C14ADD4ED61}" Name="Formulario en blanco" NameU="Blank form" Master="0">
+					<Text>Periodo Rectoral de Partidas</Text>
+					<XForm>
+						<PinX Unit="MM">3.937007874015750</PinX>
+						<PinY Unit="MM">5.118110236220471</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="10" UniqueID="{3877569C-7060-4D5E-A47B-C4B8A9B7B31F}" Name="Hoja.10" NameU="Sheet.10">
+					<Text>Nro Reso. Rect.</Text>
+					<XForm>
+						<PinX Unit="MM">2.283464566929133</PinX>
+						<PinY Unit="MM">7.263779527559056</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="11" UniqueID="{6870B4EA-B694-4320-B18C-A90FFB7DFA7D}" Name="Cuadro de texto (una línea)" NameU="Text box (single-line)" Master="2">
+					<XForm>
+						<PinX Unit="MM">2.972440944881889</PinX>
+						<PinY Unit="MM">7.283464566929134</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="14" UniqueID="{96FB3113-F7C9-4105-89F7-22FAD139BCDB}" Name="Hoja.14" NameU="Sheet.14">
+					<Text>Fecha Emision</Text>
+					<XForm>
+						<PinX Unit="MM">2.263779527559055</PinX>
+						<PinY Unit="MM">6.889763779527558</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="15" UniqueID="{BB53D0E0-A8E1-4D59-B5FC-6710BBEC2BAD}" Name="Hoja.15" NameU="Sheet.15">
+					<Text>Fecha Vigencia:</Text>
+					<XForm>
+						<PinX Unit="MM">2.165354330708661</PinX>
+						<PinY Unit="MM">6.594488188976377</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="16" UniqueID="{19D0E526-328D-4D9F-82B8-1EE6B43E3333}" Name="Hoja.16" NameU="Sheet.16">
+					<Text>Estado:</Text>
+					<XForm>
+						<PinX Unit="MM">2.047244094488189</PinX>
+						<PinY Unit="MM">5.994094488188976</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="17" UniqueID="{CAE6AABC-6EA4-4626-A04A-BF950935B7FA}" Name="Cuadro de texto (una línea).155" NameU="Text box (single-line).155" Master="2">
+					<XForm>
+						<PinX Unit="MM">2.952755905511811</PinX>
+						<PinY Unit="MM">6.889763779527558</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="20" UniqueID="{11C70089-0182-45F6-B434-C85C55ABBF76}" Name="Cuadro de texto (una línea).158" NameU="Text box (single-line).158" Master="2">
+					<XForm>
+						<PinX Unit="MM">2.952755905511810</PinX>
+						<PinY Unit="MM">6.594488188976377</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="23" UniqueID="{6DE055FF-970F-4B0A-B979-9283F9B0A3C7}" Name="Cuadro combinado" NameU="Combo box" Master="4">
+					<Text>Vigente/Caduco/Anulado</Text>
+					<XForm>
+						<PinX Unit="MM">2.657480314960604</PinX>
+						<PinY Unit="MM">5.994094488188975</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="32" UniqueID="{993417C8-6C02-45D0-8D92-B34E1FF7C9FE}" Name="Hoja.32" NameU="Sheet.32">
+					<Text>Descripción:</Text>
+					<XForm>
+						<PinX Unit="MM">2.047244094488188</PinX>
+						<PinY Unit="MM">5.629921259842519</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="33" UniqueID="{1BC724AE-BFDB-4D45-9AED-B22BFC89F27B}" Name="Cuadro de texto (una línea).33" NameU="Text box (single-line).33" Master="2">
+					<XForm>
+						<PinX Unit="MM">2.598425196850394</PinX>
+						<PinY Unit="MM">5.629921259842520</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="36" UniqueID="{0EC2CB95-2C64-4DA7-89F3-47A4576594D4}" Name="Botón de comando.41" NameU="Command button.41" Master="5">
+					<Text>Grabar</Text>
+					<XForm>
+						<PinX Unit="MM">3.804133858267716</PinX>
+						<PinY Unit="MM">2.672244094488189</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="42" UniqueID="{C8854B30-EF1E-4CCA-87A7-E0FFA7163339}" Name="Botón de comando.238" NameU="Command button.238" Master="5">
+					<Text>Cancelar</Text>
+					<XForm>
+						<PinX Unit="MM">4.857283464566929</PinX>
+						<PinY Unit="MM">2.672244094488189</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="48" UniqueID="{A4067B44-35BF-4002-BE92-E80E488DF306}" Name="Hoja.48" NameU="Sheet.48">
+					<Text>Fecha Termino:</Text>
+					<XForm>
+						<PinX Unit="MM">2.204724409448819</PinX>
+						<PinY Unit="MM">6.294291338582677</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="49" UniqueID="{9153186A-8814-4E83-9DFC-DD2B819210D8}" Name="Cuadro de texto (una línea).49" NameU="Text box (single-line).49" Master="2">
+					<XForm>
+						<PinX Unit="MM">2.992125984251969</PinX>
+						<PinY Unit="MM">6.294291338582677</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+		<Page ID="7" Name="Página-5" NameU="Page-5">
+			<Shapes>
+				<Shape ID="1" UniqueID="{3467802A-E112-44A9-A8A0-47952D3DF3FB}" Name="Formulario en blanco" NameU="Blank form" Master="0">
+					<Text>MAESTROS</Text>
+					<XForm>
+						<PinX Unit="MM">2.854330708661415</PinX>
+						<PinY Unit="MM">5.413385826771652</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="10" UniqueID="{2B5909D7-FBE8-4939-96EC-5BC0FB69EB51}" Name="Cuadro de grupo" NameU="Group box" Master="8">
+					<Text>Maestro de Conceptos</Text>
+					<XForm>
+						<PinX Unit="MM">2.657480314960627</PinX>
+						<PinY Unit="MM">5.339566929133859</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="11" UniqueID="{63F60CBC-6DE8-438B-B84E-A951F3420692}" Name="Columna de cuadrícula" NameU="Grid column" Master="9">
+					<Text>CONCEPTOS</Text>
+					<XForm>
+						<PinX Unit="MM">1.279527559055113</PinX>
+						<PinY Unit="MM">6.102362204724408</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">10</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="32" UniqueID="{54F92340-4CD0-4C36-B5AF-958CAC5CA8FE}" Name="Cuadro de texto (una línea)" NameU="Text box (single-line)" Master="2">
+					<XForm>
+						<PinX Unit="MM">1.299212598425167</PinX>
+						<PinY Unit="MM">6.299212598425195</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="35" UniqueID="{DDEF59E9-495E-4AEE-9E39-16FB4D3F7E22}" Name="Botón de comando" NameU="Command button" Master="5">
+					<Text>Agregar</Text>
+					<XForm>
+						<PinX Unit="MM">4.247047244094484</PinX>
+						<PinY Unit="MM">6.299212598425195</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="41" UniqueID="{D323EE20-51BE-423D-B690-D334AF451FE4}" Name="Botón de comando.41" NameU="Command button.41" Master="5">
+					<Text>Grabar</Text>
+					<XForm>
+						<PinX Unit="MM">2.327755905511807</PinX>
+						<PinY Unit="MM">3.233267716535432</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="47" UniqueID="{E0808C0B-83BB-4FEF-BF3F-66075D835A74}" Name="Botón de comando.238" NameU="Command button.238" Master="5">
+					<Text>Cancelar</Text>
+					<XForm>
+						<PinX Unit="MM">3.380905511811020</PinX>
+						<PinY Unit="MM">3.233267716535432</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="53" UniqueID="{0F4DF65D-EFED-4AB8-AD6E-0D5D9439D8AD}" Name="Control de ficha (fichas)" NameU="Tab control (tabs)" Master="11">
+					<Text>Maestro de Conceptos</Text>
+					<XForm>
+						<PinX Unit="MM">1.141449990575776</PinX>
+						<PinY Unit="MM">7.480314960629920</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="59" UniqueID="{F5681BDF-64BA-456A-8E75-FDB3F9C38A48}" Name="Formulario en blanco.59" NameU="Blank form.59" Master="0">
+					<Text>MAESTROS</Text>
+					<XForm>
+						<PinX Unit="MM">8.562992125984254</PinX>
+						<PinY Unit="MM">5.413385826771653</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="68" UniqueID="{530485CF-5563-456D-AB78-0CA55398E223}" Name="Cuadro de grupo.68" NameU="Group box.68" Master="8">
+					<Text>Maestro de Distirbucion</Text>
+					<XForm>
+						<PinX Unit="MM">8.464566929133857</PinX>
+						<PinY Unit="MM">5.452755905511809</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="69" UniqueID="{CCBBA818-D1D5-4185-8E94-8FDB4A1D28CE}" Name="Control de ficha (fichas).69" NameU="Tab control (tabs).69" Master="11">
+					<Text>Maestro de Distribucion</Text>
+					<XForm>
+						<PinX Unit="MM">6.731211033733883</PinX>
+						<PinY Unit="MM">7.480314960629920</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="75" UniqueID="{8CD5D52F-759A-44F6-82F3-E9A964798D6B}" Name="Columna de cuadrícula.75" NameU="Grid column.75" Master="9">
+					<Text>DISTRIBUION</Text>
+					<XForm>
+						<PinX Unit="MM">6.368110236220471</PinX>
+						<PinY Unit="MM">6.805511811023622</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">10</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="96" UniqueID="{6355DD94-6CEE-4E7A-8430-E786F602E0AA}" Name="Botón de comando.96" NameU="Command button.96" Master="5">
+					<Text>Agregar</Text>
+					<XForm>
+						<PinX Unit="MM">10.270669291338582</PinX>
+						<PinY Unit="MM">4.837598425196850</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="102" UniqueID="{601DDD12-2526-4F93-B3E1-9BE85951936C}" Name="Cuadro de texto (una línea).102" NameU="Text box (single-line).102" Master="2">
+					<XForm>
+						<PinX Unit="MM">6.368110236220471</PinX>
+						<PinY Unit="MM">4.822834645669291</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="105" UniqueID="{EC61BBAD-6F40-4A70-A40F-AE8C8EDFE45A}" Name="Botón de comando.105" NameU="Command button.105" Master="5">
+					<Text>Grabar</Text>
+					<XForm>
+						<PinX Unit="MM">8.134842519685039</PinX>
+						<PinY Unit="MM">3.149606299212598</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="111" UniqueID="{868B5CFC-DC6D-463E-9B83-F18665066DC7}" Name="Botón de comando.111" NameU="Command button.111" Master="5">
+					<Text>Cancelar</Text>
+					<XForm>
+						<PinX Unit="MM">9.187992125984252</PinX>
+						<PinY Unit="MM">3.149606299212598</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="117" UniqueID="{59BFBD02-DCCC-4B38-BA24-0D21C195865C}" Name="Botón de comando.117" NameU="Command button.117" Master="5">
+					<Text>Borrar</Text>
+					<XForm>
+						<PinX Unit="MM">4.217519685039370</PinX>
+						<PinY Unit="MM">5.201771653543307</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="123" UniqueID="{67A9F36F-B3E6-4B86-9177-DBC1AA98C6FE}" Name="Botón de comando.123" NameU="Command button.123" Master="5">
+					<Text>Borrar</Text>
+					<XForm>
+						<PinX Unit="MM">10.270669291338582</PinX>
+						<PinY Unit="MM">5.905511811023621</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+		<Page ID="8" Name="Página-6" NameU="Page-6">
+			<Shapes>
+				<Shape ID="1" UniqueID="{C7F0A3AA-9F35-4E38-BE6E-A83E0485C7E2}" Name="Formulario en blanco" NameU="Blank form" Master="0">
+					<Text>Detalle de Partidas</Text>
+					<XForm>
+						<PinX Unit="MM">3.937007874015748</PinX>
+						<PinY Unit="MM">5.905511811023624</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="10" UniqueID="{70DD2A57-5DDD-44C6-B5BA-7BBE18BB06D9}" Name="Columna de cuadrícula" NameU="Grid column" Master="9">
+					<XForm>
+						<PinX Unit="MM">1.003937007874014</PinX>
+						<PinY Unit="MM">6.397637795275592</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">7</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="31" UniqueID="{99BFC281-C260-4361-930D-26457E028701}" Name="Columna de cuadrícula.31" NameU="Grid column.31" Master="9">
+					<XForm>
+						<PinX Unit="MM">1.988188976377951</PinX>
+						<PinY Unit="MM">6.397637795275591</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">7</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="52" UniqueID="{90C68448-D7EF-48D3-B3FF-44D37CF621D4}" Name="Columna de cuadrícula.52" NameU="Grid column.52" Master="9">
+					<XForm>
+						<PinX Unit="MM">3.464566929133859</PinX>
+						<PinY Unit="MM">6.397637795275592</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">7</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="73" UniqueID="{83DE5D72-27DF-429F-9CC3-42B197E859FB}" Name="Columna de cuadrícula.73" NameU="Grid column.73" Master="9">
+					<XForm>
+						<PinX Unit="MM">4.547244094488187</PinX>
+						<PinY Unit="MM">6.397637795275591</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">7</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="94" UniqueID="{0FAD6D94-26A5-4295-B618-E9395C816D8F}" Name="Botón de comando" NameU="Command button" Master="5">
+					<Text>Agregar</Text>
+					<XForm>
+						<PinX Unit="MM">6.889763779527558</PinX>
+						<PinY Unit="MM">5.004921259842520</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="118" UniqueID="{9CA0EA7B-9220-452A-9BD4-3B6B44FB8268}" Name="Botón de comando.118" NameU="Command button.118" Master="5">
+					<Text>Ver Distribucion</Text>
+					<XForm>
+						<PinX Unit="MM">6.889763779527558</PinX>
+						<PinY Unit="MM">6.018700787401574</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="124" UniqueID="{DEA98560-FA25-4DFB-8569-2F6253011E85}" Name="Botón de comando.124" NameU="Command button.124" Master="5">
+					<Text>Borrar</Text>
+					<XForm>
+						<PinX Unit="MM">6.889763779527558</PinX>
+						<PinY Unit="MM">5.624999999999999</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="130" UniqueID="{CA9AEE9E-B76C-4A07-921D-968475E20FC2}" Name="Botón de comando.130" NameU="Command button.130" Master="5">
+					<Text>Guardar</Text>
+					<XForm>
+						<PinX Unit="MM">3.184055118110236</PinX>
+						<PinY Unit="MM">4.611220472440945</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="136" UniqueID="{11F2D547-90BD-4C89-9B60-644E6114C997}" Name="Botón de comando.136" NameU="Command button.136" Master="5">
+					<Text>Cancelar</Text>
+					<XForm>
+						<PinX Unit="MM">4.296259842519685</PinX>
+						<PinY Unit="MM">4.611220472440945</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="142" UniqueID="{AC146C3E-CFBB-4816-AF4B-1136925E6036}" Name="Columna de cuadrícula.142" NameU="Grid column.142" Master="9">
+					<XForm>
+						<PinX Unit="MM">5.531496062992128</PinX>
+						<PinY Unit="MM">6.397637795275592</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">7</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="160" UniqueID="{A818844E-F324-43B7-BC3A-5306E2E3B843}" Name="Hoja.160" NameU="Sheet.160">
+					<Text>no</Text>
+					<XForm>
+						<PinX Unit="MM">5.925196850393703</PinX>
+						<PinY Unit="MM">6.397637795275593</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="161" UniqueID="{29D7F792-840C-434D-B3D4-8DCA171D9E2A}" Name="Hoja.161" NameU="Sheet.161">
+					<Text>si</Text>
+					<XForm>
+						<PinX Unit="MM">5.925196850393703</PinX>
+						<PinY Unit="MM">6.397637795275593</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="163" UniqueID="{A449926D-BFE5-4200-8630-48E6F7411F29}" Name="Columna de cuadrícula.163" NameU="Grid column.163" Master="9">
+					<Text>Cod. Partida</Text>
+					<XForm>
+						<PinX Unit="MM">1.003937007874014</PinX>
+						<PinY Unit="MM">6.574803149606298</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">1</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="184" UniqueID="{781713D5-0D89-452B-BB9C-AA22EDC40429}" Name="Columna de cuadrícula.184" NameU="Grid column.184" Master="9">
+					<Text>Concepto</Text>
+					<XForm>
+						<PinX Unit="MM">1.988188976377951</PinX>
+						<PinY Unit="MM">6.584645669291339</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">1</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="205" UniqueID="{C80CA682-E21B-4D32-9719-CF11D7848418}" Name="Columna de cuadrícula.205" NameU="Grid column.205" Master="9">
+					<Text>Nombre de Partida</Text>
+					<XForm>
+						<PinX Unit="MM">3.454724409448818</PinX>
+						<PinY Unit="MM">6.584645669291337</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">1</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="226" UniqueID="{30C69EAE-E4CE-4FF1-844C-4619DC62BC4F}" Name="Columna de cuadrícula.226" NameU="Grid column.226" Master="9">
+					<Text>Monto S/</Text>
+					<XForm>
+						<PinX Unit="MM">4.554637375514611</PinX>
+						<PinY Unit="MM">6.584645669291337</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">1</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="247" UniqueID="{3C08721C-5BE8-43C8-8910-85C8E8414C0D}" Name="Columna de cuadrícula.247" NameU="Grid column.247" Master="9">
+					<Text>Distribuido</Text>
+					<XForm>
+						<PinX Unit="MM">5.511811023622046</PinX>
+						<PinY Unit="MM">6.584645669291337</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">1</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="100" UniqueID="{B4F78C0A-1CDB-4DAC-B6F3-60BBF3057F83}" Name="Cuadro de texto (una línea)" NameU="Text box (single-line)" Master="2">
+					<XForm>
+						<PinX Unit="MM">1.023622047244068</PinX>
+						<PinY Unit="MM">5.014763779527558</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="103" UniqueID="{A25CF6F8-7898-40B2-A7D1-37BDA29DFEAF}" Name="Cuadro combinado" NameU="Combo box" Master="4">
+					<Text>Maestro de Conceptos</Text>
+					<XForm>
+						<PinX Unit="MM">2.007874015748032</PinX>
+						<PinY Unit="MM">5.014763779527558</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="112" UniqueID="{1CE19134-D05D-4EBD-A563-48FD96B77C5B}" Name="Cuadro de texto (una línea).112" NameU="Text box (single-line).112" Master="2">
+					<XForm>
+						<PinX Unit="MM">3.503937007873990</PinX>
+						<PinY Unit="MM">5.014763779527558</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="115" UniqueID="{F71BAB4D-05CB-4B0F-8A6E-0E5033C528AA}" Name="Cuadro de texto (una línea).115" NameU="Text box (single-line).115" Master="2">
+					<XForm>
+						<PinX Unit="MM">4.566929133858267</PinX>
+						<PinY Unit="MM">5.014763779527558</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+		<Page ID="9" Name="Página-7" NameU="Page-7">
+			<Layer IX="0">
+				<Name>Conector</Name>
+				<NameUniv>Connector</NameUniv>
+				<Visible>1</Visible>
+			</Layer>
+			<Shapes>
+				<Shape ID="1" UniqueID="{BA8CFA7A-234D-423D-B8E6-ACFB095CF6D6}" Name="Formulario en blanco" NameU="Blank form" Master="0">
+					<Text>Distribucion</Text>
+					<XForm>
+						<PinX Unit="MM">3.937007874015748</PinX>
+						<PinY Unit="MM">5.118110236220474</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="10" UniqueID="{82D7B685-5307-43C2-81EF-8D299BDC510C}" Name="Cuadro de grupo" NameU="Group box" Master="8">
+					<Text>Partida</Text>
+					<XForm>
+						<PinX Unit="MM">4.035433070866141</PinX>
+						<PinY Unit="MM">5.610236220472442</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="11" UniqueID="{A693519C-9D7B-42B3-A173-8761012B3602}" Name="Cuadro de texto (una línea)" NameU="Text box (single-line)" Master="2">
+					<XForm>
+						<PinX Unit="MM">1.023622047244082</PinX>
+						<PinY Unit="MM">5.610236220472441</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="14" UniqueID="{1B6E044A-76E6-4BC9-A635-8AF017138031}" Name="Cuadro de texto (una línea).14" NameU="Text box (single-line).14" Master="2">
+					<XForm>
+						<PinX Unit="MM">2.362204724409449</PinX>
+						<PinY Unit="MM">5.610236220472441</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="17" UniqueID="{B1DF8408-95ED-4E99-BBF3-A42344F39553}" Name="Cuadro de texto (una línea).17" NameU="Text box (single-line).17" Master="2">
+					<XForm>
+						<PinX Unit="MM">4.015748031496062</PinX>
+						<PinY Unit="MM">5.610236220472441</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="20" UniqueID="{F80C4F7D-3768-45A6-991D-BF7C5F2A83AA}" Name="Cuadro de texto (una línea).20" NameU="Text box (single-line).20" Master="2">
+					<XForm>
+						<PinX Unit="MM">5.826771653543307</PinX>
+						<PinY Unit="MM">5.610236220472441</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="23" UniqueID="{B4F5E292-D3BB-4FA6-9E65-385C67737358}" Name="Hoja.23" NameU="Sheet.23">
+					<Text>Codigo</Text>
+					<XForm>
+						<PinX Unit="MM">1.589566929133865</PinX>
+						<PinY Unit="MM">5.802165354330708</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="24" UniqueID="{BF0DA2EF-DCAF-40B7-A92A-817954B0361F}" Name="Hoja.24" NameU="Sheet.24">
+					<Text>Concepto</Text>
+					<XForm>
+						<PinX Unit="MM">3.085629921259843</PinX>
+						<PinY Unit="MM">5.802165354330708</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="25" UniqueID="{97934AA9-DB22-48E6-99D7-818118585E06}" Name="Hoja.25" NameU="Sheet.25">
+					<Text>Partida</Text>
+					<XForm>
+						<PinX Unit="MM">4.817913385826771</PinX>
+						<PinY Unit="MM">5.802165354330708</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="26" UniqueID="{3E3044CE-065E-4D0D-84F0-767DD4187B6D}" Name="Hoja.26" NameU="Sheet.26">
+					<Text>Monto</Text>
+					<XForm>
+						<PinX Unit="MM">6.530511811023622</PinX>
+						<PinY Unit="MM">5.802165354330708</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="27" UniqueID="{5CCCE643-3B68-486E-8D9F-FA8505B38434}" Name="Columna de cuadrícula" NameU="Grid column" Master="9">
+					<Text>Distirbucion</Text>
+					<XForm>
+						<PinX Unit="MM">1.574803149606299</PinX>
+						<PinY Unit="MM">5.078740157480315</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">4</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="57" UniqueID="{2DFD95BD-1F63-4F06-989F-C936ADC51A86}" Name="Botón de comando" NameU="Command button" Master="5">
+					<Text>Agregar</Text>
+					<XForm>
+						<PinX Unit="MM">4.099409448818897</PinX>
+						<PinY Unit="MM">4.217519685039370</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="63" UniqueID="{4ACE5A48-A984-4A4C-A584-ACC0EE8D17E3}" Name="Columna de cuadrícula.63" NameU="Grid column.63" Master="9">
+					<Text>Porcentaje</Text>
+					<XForm>
+						<PinX Unit="MM">2.657480314960628</PinX>
+						<PinY Unit="MM">5.078740157480315</PinY>
+					</XForm>
+					<Prop ID="1" Name="Rows" NameU="Rows">
+						<Value Unit="STR">4</Value>
+						<Label>Número de filas</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="87" UniqueID="{FAD92782-1D6B-442C-AC36-B9801BC65EA1}" Name="Botón de comando.87" NameU="Command button.87" Master="5">
+					<Text>Borrar</Text>
+					<XForm>
+						<PinX Unit="MM">4.099409448818897</PinX>
+						<PinY Unit="MM">4.719488188976378</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="93" UniqueID="{F47D3B96-808D-402E-A017-EC9C924848A8}" Name="Botón de comando.130" NameU="Command button.130" Master="5">
+					<Text>Guardar</Text>
+					<XForm>
+						<PinX Unit="MM">3.380905511811023</PinX>
+						<PinY Unit="MM">3.823818897637795</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="99" UniqueID="{9684FD7E-40DE-45AF-AFE0-C692BFCC1A24}" Name="Botón de comando.136" NameU="Command button.136" Master="5">
+					<Text>Cancelar</Text>
+					<XForm>
+						<PinX Unit="MM">4.493110236220472</PinX>
+						<PinY Unit="MM">3.823818897637795</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="105" UniqueID="{5649CBC0-2230-4C33-BB99-EE220B991FD7}" Name="Hoja.105" NameU="Sheet.105">
+					<Text>Hay Transferencia de Opciones Pero al borrar uno de la tabla, esta debe de regresar a la lista de opciones</Text>
+					<XForm>
+						<PinX Unit="MM">1.181102362204724</PinX>
+						<PinY Unit="MM">2.894794400699912</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="106" UniqueID="{247C2A38-950D-4426-8398-4EE4F827EBBC}" Name="Hoja.106" NameU="Sheet.106">
+					<Text>El total del porcentaje debe sumar 100% en la tabla, y todas las opciones deben de estar ingresadas, se acepta cero como porcentaje</Text>
+					<XForm>
+						<PinX Unit="MM">3.865704286964128</PinX>
+						<PinY Unit="MM">2.894794400699912</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="48" UniqueID="{A449295E-4106-4099-B589-DCF6B243816D}" Name="Cuadro combinado" NameU="Combo box" Master="4">
+					<Text>Maest. Distrib.</Text>
+					<XForm>
+						<PinX Unit="MM">1.574678713616698</PinX>
+						<PinY Unit="MM">4.227362204724408</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="84" UniqueID="{5DA0B364-84A9-4C4B-B1A3-0DE8BCDA6EA3}" Name="Cuadro de texto (una línea).84" NameU="Text box (single-line).84" Master="2">
+					<XForm>
+						<PinX Unit="MM">2.677040918341108</PinX>
+						<PinY Unit="MM">4.227362204724408</PinY>
+					</XForm>
+				</Shape>
+			</Shapes>
+		</Page>
+	</Pages>
+</VisioDocument>

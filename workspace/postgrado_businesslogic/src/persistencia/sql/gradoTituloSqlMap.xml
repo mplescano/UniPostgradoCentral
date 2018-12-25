@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+	"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="gradoTituloSqlMap">
+	<resultMap class="dominio.negocio.GradoTitulo" id="result">
+		<result property="id" column="gtid" />
+		<result property="idAlumnoEgresado" column="gtid_alumno_egresado" />
+		<result property="nombreGradoTitulo" column="gtnombre_grado_titulo" />
+		<result property="orgProcedencia" column="gtorganizacion_procedencia" />
+		<result property="periodoEgreso" column="gtperiodo_egreso" />
+	</resultMap>
+	
+	<statement id="getGradoTituloList" resultMap="result">
+		SELECT
+			gt.id as gtid,
+			gt.id_alumno_egresado as gtid_alumno_egresado,
+			gt.nombre_grado_titulo as gtnombre_grado_titulo,
+			gt.organizacion_procedencia as gtorganizacion_procedencia,
+			gt.periodo_egreso as gtperiodo_egreso
+		FROM
+			grado_titulo gt
+		<dynamic prepend="WHERE">
+			<isNotNull prepend="AND" property="idAlumnoEgresado">
+				gt.id_alumno_egresado=#idAlumnoEgresado#
+			</isNotNull>
+			<isNotNull prepend="AND" property="nombreGradoTitulo">
+				gt.nombre_grado_titulo LIKE #nombreGradoTitulo#
+			</isNotNull>
+			<isNotNull prepend="AND" property="orgProcedencia">
+				gt.organizacion_procedencia LIKE #orgProcedencia#
+			</isNotNull>
+			<isNotNull prepend="AND" property="periodoEgreso">
+				gt.periodo_egreso LIKE #periodoEgreso#
+			</isNotNull>
+		</dynamic>
+	</statement>
+	
+	<statement id="getGradoTitulo" resultMap="result">
+		SELECT
+			gt.id as gtid,
+			gt.id_alumno_egresado as gtid_alumno_egresado,
+			gt.nombre_grado_titulo as gtnombre_grado_titulo,
+			gt.organizacion_procedencia as gtorganizacion_procedencia,
+			gt.periodo_egreso as gtperiodo_egreso
+		FROM
+			grado_titulo gt
+		WHERE
+			gt.id=#value#
+	</statement>
+	
+	<insert id="insertGradoTitulo">
+		INSERT INTO grado_titulo (id,  id_alumno_egresado, nombre_grado_titulo,	organizacion_procedencia,	periodo_egreso) VALUES (
+								  #id#,#idAlumnoEgresado#,	#nombreGradoTitulo#,	#orgProcedencia#,			#periodoEgreso#)
+	</insert>
+	
+	<update id="updateGradoTitulo">
+		UPDATE grado_titulo SET
+			id_alumno_egresado=#idAlumnoEgresado#,
+			nombre_grado_titulo=#nombreGradoTitulo#,
+			organizacion_procedencia=#orgProcedencia#,
+			periodo_egreso=#periodoEgreso#
+		WHERE
+			id=#id#
+	</update>
+	
+	<delete id="deleteGradoTitulo">
+		DELETE FROM grado_titulo WHERE id=#value#
+	</delete>
+</sqlMap>

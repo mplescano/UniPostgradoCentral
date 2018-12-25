@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+	"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="ubigeoSqlMap">
+    <resultMap id="result" class="dominio.negocio.Ubigeo">
+        <result property="cod_pais" column="cod_pais" />
+        <result property="cod_departamento" column="cod_departamento" />
+        <result property="cod_provincia" column="cod_provincia" />
+        <result property="cod_distrito" column="cod_distrito" />
+        <result property="nombre" column="nombre"/>
+        <result property="id" column="id"/>
+    </resultMap>
+    <resultMap id="resultView" class="dominio.negocio.UbigeoView" extends="ubigeoSqlMap.result">
+        <result property="nombre_pais" column="nombre_pais" />
+        <result property="nombre_departamento" column="nombre_departamento" />
+        <result property="nombre_provincia" column="nombre_provincia" />
+        <result property="nombre_distrito" column="nombre_distrito" />
+    </resultMap>
+    <statement id="getUbigeoList" resultMap="result">
+		SELECT 
+			id,
+			cod_pais,
+			cod_departamento,
+			cod_provincia,
+			cod_distrito,
+			nombre 
+		FROM 
+			ubigeo
+	</statement>
+
+
+    <statement id="getUbigeoListPorNombre" resultMap="result">
+		SELECT 
+			id,
+			cod_pais,
+			cod_departamento,
+			cod_provincia,
+			cod_distrito,
+			nombre 
+		FROM 
+			ubigeo
+		WHERE
+			nombre ilike #value#
+	</statement>
+
+    <statement id="getUbigeoListPorDpt" resultMap="result">
+		SELECT
+			*
+		FROM
+			UBIGEO
+		WHERE
+			cod_departamento=cod_provincia AND
+			cod_provincia=cod_distrito AND
+			cod_pais = #value#
+	</statement>
+
+    <statement id="getUbigeoListPorDst" resultMap="result">
+    	<![CDATA[
+			SELECT
+				dst.id,
+				dst.cod_pais,
+				dst.cod_departamento,
+				dst.cod_provincia,
+				dst.cod_distrito,
+				dst.nombre
+			FROM
+				ubigeo dst
+			WHERE
+				dst.cod_departamento<>'00' AND
+				dst.cod_provincia<>'00' AND
+				dst.cod_distrito<>'00'
+    	]]>
+    	<isNotNull prepend="AND" property="cod_pais">
+			dst.cod_pais = #cod_pais#
+    	</isNotNull>
+    	<isNotNull prepend="AND" property="cod_departamento">
+			dst.cod_departamento = #cod_departamento#
+    	</isNotNull>
+		<isNotNull prepend="AND" property="cod_provincia">
+			dst.cod_provincia = #cod_provincia#
+		</isNotNull>
+    </statement>
+
+    <statement id="getUbigeoViewListPorDst" resultMap="resultView">
+    	<![CDATA[
+			SELECT
+				ubigeo.id as id,
+				
+				ubigeo.cod_pais as cod_pais,
+				ubigeo_pais.nombre AS nombre_pais, 
+				
+				ubigeo.cod_departamento as cod_departamento,
+				ubigeo_dpt.nombre AS nombre_departamento,
+				
+				ubigeo.cod_provincia as cod_provincia,
+				ubigeo_prv.nombre AS nombre_provincia,
+				
+				ubigeo.cod_distrito as cod_distrito,
+				ubigeo_dst.nombre as nombre_distrito,
+				
+				ubigeo.nombre
+			FROM 
+			(
+				(
+					(
+						ubigeo
+							LEFT JOIN ubigeo AS ubigeo_pais ON ((ubigeo.cod_pais = ubigeo_pais.cod_pais) AND (ubigeo_pais.cod_departamento = '00')  AND (ubigeo_pais.cod_provincia = '00') AND (ubigeo_pais.cod_distrito = '00'))
+					) 
+						LEFT JOIN ubigeo AS ubigeo_dpt 
+							ON ((ubigeo.cod_departamento = ubigeo_dpt.cod_departamento) AND (ubigeo.cod_pais = ubigeo_dpt.cod_pais) AND (ubigeo_dpt.cod_provincia = '00') AND (ubigeo_dpt.cod_distrito = '00') AND (ubigeo_dpt.cod_departamento <> '00'))
+				)
+					LEFT JOIN ubigeo AS ubigeo_prv ON ((ubigeo.cod_provincia = ubigeo_prv.cod_provincia) AND (ubigeo.cod_departamento = ubigeo_prv.cod_departamento) AND (ubigeo.cod_pais = ubigeo_prv.cod_pais)  AND (ubigeo_prv.cod_distrito = '00') AND (ubigeo_prv.cod_departamento <> '00') AND (ubigeo_prv.cod_provincia <> '00'))
+			) 
+				LEFT JOIN ubigeo AS ubigeo_dst ON ((ubigeo.cod_distrito = ubigeo_dst.cod_distrito) AND (ubigeo.cod_provincia = ubigeo_dst.cod_provincia) AND (ubigeo.cod_departamento = ubigeo_dst.cod_departamento) AND (ubigeo.cod_pais = ubigeo_dst.cod_pais) AND (ubigeo_dst.cod_departamento <> '00') AND (ubigeo_dst.cod_provincia <> '00') AND (ubigeo_dst.cod_distrito <> '00'))
+    	]]>
+    	<dynamic prepend="WHERE">
+	    	<isNotNull prepend="AND" property="cod_pais">
+				ubigeo.cod_pais=#cod_pais#
+	    	</isNotNull>
+	    	<isNotNull prepend="AND" property="cod_departamento">
+				ubigeo.cod_departamento=#cod_departamento#
+	    	</isNotNull>
+			<isNotNull prepend="AND" property="cod_provincia">
+				ubigeo.cod_provincia=#cod_provincia#
+			</isNotNull>
+			<isNotNull prepend="AND" property="nombre">
+				ubigeo.nombre LIKE #nombre#
+			</isNotNull>
+		</dynamic>
+    </statement>
+
+    <statement id="getUbigeo" resultMap="result">
+		SELECT 
+			id,
+			cod_pais,
+			cod_departamento,
+			cod_provincia,
+			cod_distrito,
+			nombre 
+		FROM 
+			ubigeo
+		WHERE
+			id=#value#
+	</statement>
+
+    <statement id="insertUbigeo">
+		INSERT INTO ubigeo(id, cod_pais,cod_departamento,cod_provincia,cod_distrito,nombre) 
+				VALUES (#id#, #cod_pais#,#cod_departamento#,#cod_provincia#,#cod_distrito#,#nombre#)
+	</statement>
+</sqlMap>

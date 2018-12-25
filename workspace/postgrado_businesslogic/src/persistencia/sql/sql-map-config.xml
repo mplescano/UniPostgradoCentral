@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN" "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+
+  <properties resource="propiedades/databaseNative.properties"/>
+
+  <settings
+	useStatementNamespaces="true"
+    cacheModelsEnabled="true"
+    enhancementEnabled="true"
+    maxSessions="64"
+    maxTransactions="8"
+    maxRequests="128"/>
+
+  <transactionManager type="JDBC">
+    <dataSource type="SIMPLE">
+      <property value="${driver}" name="JDBC.Driver"/>
+      <property value="${url}" name="JDBC.ConnectionURL"/>
+      <property value="${username}" name="JDBC.Username"/>
+      <property value="${password}" name="JDBC.Password"/>
+      <property value="15" name="Pool.MaximumActiveConnections"/>
+      <property value="15" name="Pool.MaximumIdleConnections"/>
+      <property value="1000" name="Pool.MaximumWait"/>
+    </dataSource>
+  </transactionManager>
+	<sqlMap resource="persistencia/sql/alumnoSqlMap.xml"/>
+	<sqlMap resource="persistencia/sql/gradoTituloSqlMap.xml"/>
+	<sqlMap resource="persistencia/sql/planEstudioSqlMap.xml"/>
+	<sqlMap resource="persistencia/sql/tpIdiomaSqlMap.xml"/>
+	<sqlMap resource="persistencia/sql/usuariosSqlMap.xml"/>
+	<sqlMap resource="persistencia/sql/ubigeoSqlMap.xml"/>
+	<sqlMap resource="persistencia/sql/secuenciaSqlMap.xml"/>
+	<sqlMap resource="persistencia/sql/estudioPostgradoSqlMap.xml"/>
+<!--
+
+  <sqlMap resource="persistencia/sqlMapdao/sql/profesorSqlMap.xml"/>
+  <sqlMap resource="persistencia/sqlMapdao/sql/moduloSqlMap.xml"/>
+  <sqlMap resource="persistencia/sqlMapdao/sql/modulo_ciclo_cursoSqlMap.xml"/>
+  <sqlMap resource="persistencia/sqlMapdao/sql/tp_evaluacionSqlMap.xml"/>
+  <sqlMap resource="persistencia/sqlMapdao/sql/tp_estadoSqlMap.xml"/>
+  <sqlMap resource="persistencia/sqlMapdao/sql/tp_cicloSqlMap.xml"/>
+  <sqlMap resource="persistencia/sqlMapdao/sql/periodo_academicoSqlMap.xml"/>
+  <sqlMap resource="persistencia/sqlMapdao/sql/pa_curso_profesorSqlMap.xml"/>
+  <sqlMap resource="persistencia/sqlMapdao/sql/pa_alumnoSqlMap.xml"/>
+
+  <sqlMap resource="persistencia/sqlMapdao/sql/Category.xml"/>
+  <sqlMap resource="persistencia/sqlMapdao/sql/Product.xml"/>
+  <sqlMap resource="persistencia/sqlMapdao/sql/Sequence.xml"/>
+  <sqlMap resource="persistencia/sqlMapdao/sql/LineItem.xml"/>
+  <sqlMap resource="persistencia/sqlMapdao/sql/Order.xml"/>
+  <sqlMap resource="persistencia/sqlMapdao/sql/Item.xml"/>
+-->
+</sqlMapConfig>

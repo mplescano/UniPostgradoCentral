@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+	"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="estudioPostgradoSqlMap">
+	<resultMap class="dominio.negocio.EstudioPostgrado" id="resultEstudioPostgrado">
+		<result property="id" 								column="epid" />
+		<result property="especialidad" 					column="epespecialidad" />
+		<result property="descripcion" 						column="epdescripcion" />
+		
+		<result property="facultad.codigo" 					column="fccodigo" />
+		<result property="facultad.nombre" 					column="fcnombre" />
+		
+		<result property="tpPostgrado.codigo" 				column="tppcodigo" />
+		<result property="tpPostgrado.nombre" 				column="tppnombre" />
+		<result property="tpPostgrado.descripcion" 			column="tppdescripcion" />
+	</resultMap>
+
+	<statement id="getEstudioPostgradoList" resultMap="resultEstudioPostgrado">
+		<![CDATA[
+			SELECT
+				ep.id 			as epid,
+				
+				tpp.codigo 		as tppcodigo,
+				tpp.nombre 		as tppnombre,
+				tpp.descripcion as tppdescripcion,
+				
+				fc.codigo 		as fccodigo,
+				fc.nombre 		as fcnombre,
+				
+				ep.especialidad as epespecialidad,
+				ep.descripcion 	as epdescripcion
+			FROM
+				(estudio_postgrado AS ep LEFT JOIN facultad fc ON ep.facultad = fc.codigo)
+					INNER JOIN tp_postgrado tpp ON ep.tp_postgrado = tpp.codigo
+		]]>
+		<dynamic prepend="WHERE">
+			<isNotNull prepend="AND" property="especialidad">
+			</isNotNull>
+			<isNotNull prepend="AND" property="facultad_codigo">
+				ep.facultad=#facultad_codigo#
+			</isNotNull>
+			<isNotNull prepend="AND" property="tpPostgrado_codigo">
+				ep.tp_postgrado=#tpPostgrado_codigo#
+			</isNotNull>
+		</dynamic>
+	</statement>
+
+	<statement id="getEstudioPostgrado" resultMap="resultEstudioPostgrado">
+		<![CDATA[
+			SELECT
+				ep.id 			as epid,
+				
+				tpp.codigo 		as tppcodigo,
+				tpp.nombre 		as tppnombre,
+				tpp.descripcion as tppdescripcion,
+				
+				fc.codigo 		as fccodigo,
+				fc.nombre 		as fcnombre,
+				
+				ep.especialidad as epespecialidad,
+				ep.descripcion 	as epdescripcion
+			FROM
+				(estudio_postgrado AS ep LEFT JOIN facultad fc ON ep.facultad = fc.codigo)
+					INNER JOIN tp_postgrado tpp ON ep.tp_postgrado = tpp.codigo
+			WHERE
+				ep.id = #value#
+		]]>
+	</statement>
+
+	<insert id="insertEstudioPostgrado">
+	</insert>
+
+	<delete id="deleteEstudioPostgrado">
+	</delete>
+	
+	<update id="updateEstudioPostgrado">
+	</update>
+	
+	<resultMap class="dominio.negocio.Mencion" id="resultMencion">
+		<result property="codigo" 				column="mncodigo" />
+		<result property="idEstudioPostgrado" 	column="mnid_estudio_postgrado" />
+		<result property="nombre" 				column="mnnombre" />
+		<result property="descripcion" 			column="mndescripcion" />
+	</resultMap>
+	
+	<statement id="getMencionList" resultMap="resultMencion">
+		<![CDATA[
+			SELECT
+				mn.id 				as mncodigo,
+				mn.id_estudio_postgrado as mnid_estudio_postgrado,
+				mn.nombre 				as mnnombre,
+				mn.descripcion 			as mndescripcion
+			FROM
+				mencion mn,
+				facultad fc,
+				tp_postgrado tpp,
+				estudio_postgrado ep
+			WHERE
+				ep.tp_postgrado = tpp.codigo AND
+				ep.facultad = fc.codigo AND
+				mn.id_estudio_postgrado = ep.id
+		]]>
+		<isNotNull prepend="AND" property="idEstudioPostgrado">
+			mn.id_estudio_postgrado = #idEstudioPostgrado#
+		</isNotNull>
+		<isNotNull prepend="AND" property="facultad_codigo">
+			fc.codigo = #facultad_codigo#
+		</isNotNull>
+		<isNotNull prepend="AND" property="tpPostgrado_codigo">
+			tpp.codigo = #tpPostgrado_codigo#
+		</isNotNull>
+	</statement>
+	
+	<statement id="getMencion" resultMap="resultMencion">
+		<![CDATA[
+			SELECT
+				mn.id 					as mncodigo,
+				mn.id_estudio_postgrado as mnid_estudio_postgrado,
+				mn.nombre 				as mnnombre,
+				mn.descripcion 			as mndescripcion
+			FROM
+				mencion mn
+			WHERE
+				mn.id = #value#
+		]]>
+	</statement>
+</sqlMap>

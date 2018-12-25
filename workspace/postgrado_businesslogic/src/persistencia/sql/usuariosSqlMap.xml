@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+	"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="usuariosSqlMap">
+	<resultMap class="dominio.seguridad.Usuario" id="result">
+		<result property="id" column="usid" />
+		
+		<result property="grupo.codigo" column="gpcodigo" />
+		<result property="grupo.nombre" column="gpnombre" />
+		<result property="grupo.descripcion" column="gpdescripcion" />
+		
+		<result property="usuario" column="ususername" />
+		<result property="nombre" column="usnombre" />
+		<result property="apellidoMaterno" column="usapellido_materno" />
+		<result property="apellidoPaterno" column="usapellido_paterno" />
+		<result property="tpDoc" column="ustp_doc" />
+		<result property="nroDoc" column="usnro_doc" />
+		<result property="fechaRegistro" column="usfecha_registro" />
+		<result property="fechaUltimoAcceso" column="usfecha_ultimo_acceso" />
+	</resultMap>
+	
+	<statement id="getUsuario">
+		<![CDATA[
+			SELECT
+				us.id as usid,
+				
+				gp.codigo as gpcodigo,
+				gp.nombre as gpnombre,
+				gp.descripcion as gpdescripcion,
+				
+				us.username as ususername,
+				us.nombre as usnombre,
+				us.apellido_materno as usapellido_materno,
+				us.apellido_paterno as usapellido_paterno,
+				us.tp_doc as ustp_doc,
+				us.nro_doc as usnro_doc,
+				us.fecha_registro as usfecha_registro,
+				us.fecha_ultimo_acceso as usfecha_ultimo_acceso,
+			FROM
+				usuario us,
+				grupo gp
+			WHERE
+				us.tp_grupo=gp.codigo
+		]]>
+			<isNotNull prepend="AND" property="id">
+				us.id=#id#
+			</isNotNull>
+			<isNotNull prepend="AND" property="usuario">
+				us.username=#usuario#
+			</isNotNull>
+	</statement>
+	
+	<statement id="checkClave" resultClass="int">
+		<![CDATA[
+			SELECT
+				COUNT(*)
+			FROM
+				usuario
+			WHERE
+				username=#usuario# AND
+				clave=#clave#
+		]]>
+	</statement>
+
+	<statement id="checkPermisoUsuario" resultClass="int">
+		<![CDATA[
+			SELECT
+				COUNT(pr.*)
+			FROM
+				perfil pr,
+				grupo gp,
+				usuario us
+			WHERE
+				pr.modulo_token=#operacion# AND
+				pr.espermitido=1 AND
+				pr.codigo_grupo=gp.codigo AND	
+				((us.tp_grupo=gp.codigo AND
+				us.id=#usuario_id#) OR 
+				(pr.codigo_grupo='PRFLS' AND 
+				pr.codigo_usuario=#usuario_id#
+				))
+		]]>	
+	</statement>
+
+	<statement id="checkPermisoGrupo">
+		<![CDATA[
+			SELECT
+				COUNT(*)
+			FROM
+				perfil
+			WHERE
+				modulo_token=#operacion# AND
+				espermitido=1 AND
+				codigo_grupo=#grupo_codigo# AND
+				codigo_grupo<>'PRFLS'
+		]]>
+	</statement>
+
+	<update id="updateClave">
+		UPDATE usuario SET
+			clave=#claveNew#
+		WHERE
+			id=#id# AND
+			username=#usuario# AND
+			clave=#claveOld#
+	</update>
+</sqlMap>

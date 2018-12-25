@@ -1,0 +1,10 @@
+<vjdbc-configuration>
+	<rmi objectName="VJdbc" remotingPort="2001"/>
+	<connection 
+		id="pgcentral" 
+		driver="${driver}" 
+		url="${url}" 
+		user="${username}"
+		password="${password}"
+		connectionPooling="${connectionPooling}"/>
+</vjdbc-configuration>

@@ -1,0 +1,109 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Started on 2006-04-04 21:51:46 Hora est. del Pacífico de SA
+
+SET client_encoding = 'UNICODE';
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+SET search_path = public, pg_catalog;
+
+--
+-- TOC entry 1745 (class 0 OID 26972)
+-- Dependencies: 1405
+-- Data for Name: ubigeo; Type: TABLE DATA; Schema: public; Owner: pgsql
+--
+
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010101', '51', '01', '01', '01', 'LIMA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010202', '51', '01', '02', '02', 'BARRANCA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010303', '51', '01', '03', '03', 'CAJATAMBO');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010404', '51', '01', '04', '04', 'CANTA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010505', '51', '01', '05', '05', 'CAÃ‘ETE');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010606', '51', '01', '06', '06', 'HUARAL');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010707', '51', '01', '07', '07', 'HUAROCHIRI');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010808', '51', '01', '08', '08', 'HUAURA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010909', '51', '01', '09', '09', 'OYON');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51011010', '51', '01', '10', '10', 'YAUYOS');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010102', '51', '01', '01', '02', 'ANCON');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010103', '51', '01', '01', '03', 'ATE');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010104', '51', '01', '01', '04', 'BARRANCO');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010105', '51', '01', '01', '05', 'BREÃ‘A');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010106', '51', '01', '01', '06', 'CARABAYLLO');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010107', '51', '01', '01', '07', 'CHACLACAYO');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010108', '51', '01', '01', '08', 'CHORRILLOS');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010109', '51', '01', '01', '09', 'CIENEGUILLA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010110', '51', '01', '01', '10', 'COMAS');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010111', '51', '01', '01', '11', 'EL AGUSTINO');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010112', '51', '01', '01', '12', 'INDEPENDENCIA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010113', '51', '01', '01', '13', 'JESUS MARIA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010114', '51', '01', '01', '14', 'LA MOLINA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010115', '51', '01', '01', '15', 'LA VICTORIA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010116', '51', '01', '01', '16', 'LINCE');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010117', '51', '01', '01', '17', 'LOS OLIVOS');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010118', '51', '01', '01', '18', 'LURIGANCHO');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010119', '51', '01', '01', '19', 'LURIN');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010120', '51', '01', '01', '20', 'MAGDALENA DEL MAR');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010123', '51', '01', '01', '23', 'PACHACAMAC');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010122', '51', '01', '01', '22', 'MIRAFLORES');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010124', '51', '01', '01', '24', 'PUCUSANA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010121', '51', '01', '01', '21', 'PUEBLO LIBRE');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010125', '51', '01', '01', '25', 'PUENTE PIEDRA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010126', '51', '01', '01', '26', 'PUNTA HERMOSA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010127', '51', '01', '01', '27', 'PUNTA NEGRA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010128', '51', '01', '01', '28', 'RIMAC');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010129', '51', '01', '01', '29', 'SAN BARTOLO');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010130', '51', '01', '01', '30', 'SAN BORJA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010131', '51', '01', '01', '31', 'SAN ISIDRO');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010132', '51', '01', '01', '32', 'SAN JUAN DE LURIGANCHO');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010133', '51', '01', '01', '33', 'SAN JUAN DE MIRAFLORES');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010134', '51', '01', '01', '34', 'SAN LUIS');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010135', '51', '01', '01', '35', 'SAN MARTIN DE PORRES');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010136', '51', '01', '01', '36', 'SAN MIGUEL');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010137', '51', '01', '01', '37', 'SANTA ANITA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010138', '51', '01', '01', '38', 'SANTA MARIA DEL MAR');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010139', '51', '01', '01', '39', 'SANTA ROSA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010140', '51', '01', '01', '40', 'SANTIAGO DE SURCO');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010141', '51', '01', '01', '41', 'SURQUILLO');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010142', '51', '01', '01', '42', 'VILLA EL SALVADOR');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51010143', '51', '01', '01', '43', 'VILLA MARIA DEL TRIUNFO');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51414141', '51', '41', '41', '41', 'AMAZONAS');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51434343', '51', '43', '43', '43', 'ANCASH');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51838383', '51', '83', '83', '83', 'APURIMAC');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51545454', '51', '54', '54', '54', 'AREQUIPA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51666666', '51', '66', '66', '66', 'AYACUCHO');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51767676', '51', '76', '76', '76', 'CAJAMARCA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51848484', '51', '84', '84', '84', 'CUZCO');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51676767', '51', '67', '67', '67', 'HUANCAVELICA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51626262', '51', '62', '62', '62', 'HUANUCO');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51565656', '51', '56', '56', '56', 'ICA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51646464', '51', '64', '64', '64', 'JUNIN');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51444444', '51', '44', '44', '44', 'LA LIBERTAD');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51747474', '51', '74', '74', '74', 'LAMBAYEQUE');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51656565', '51', '65', '65', '65', 'LORETO');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51828282', '51', '82', '82', '82', 'MADRE DE DIOS');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51535353', '51', '53', '53', '53', 'MOQUEGUA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51636363', '51', '63', '63', '63', 'PASCO');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51737373', '51', '73', '73', '73', 'PIURA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51515151', '51', '51', '51', '51', 'PUNO');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51424242', '51', '42', '42', '42', 'SAN MARTIN');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51525252', '51', '52', '52', '52', 'TACNA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51727272', '51', '72', '72', '72', 'TUMBES');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('51616161', '51', '61', '61', '61', 'UCAYALI');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('54545454', '54', '54', '54', '54', 'ARGENTINA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('55555555', '55', '55', '55', '55', 'BRASIL');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('56565656', '56', '56', '56', '56', 'CHILE');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('57575757', '57', '57', '57', '57', 'COLOMBIA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('53535353', '53', '53', '53', '53', 'CUBA');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('01010101', '01', '01', '01', '01', 'ESTADOS UNIDOS');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('52525252', '52', '52', '52', '52', 'MEXICO');
+INSERT INTO ubigeo (id, cod_pais, cod_departamento, cod_provincia, cod_distrito, nombre) VALUES ('58585858', '58', '58', '58', '58', 'VENEZUELA');
+
+
+-- Completed on 2006-04-04 21:51:46 Hora est. del Pacífico de SA
+
+--
+-- PostgreSQL database dump complete
+--
+

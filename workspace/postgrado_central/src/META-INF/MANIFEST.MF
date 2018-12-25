@@ -1,0 +1,46 @@
+Manifest-Version: 1.0
+Main-Class: visual.SplasherMainVisual
+Class-Path: lib\commons-beanutils.jar lib\commons-collections-2.1.1.jar lib\commons-logging.jar lib\forms-1.0.6.jar lib\ibatis-dao-2.jar lib\ibatis-sqlmap-2.jar lib\ibatis-common-2.jar lib\log4j-1.2.8.jar lib\jasperreports-1.2.0.jar lib\winlaf-0.5.1.jar
+
+Name: dominio/negocio/
+Sealed: true
+
+Name: persistencia/iface/
+Sealed: true
+
+Name: dominio/
+Sealed: true
+
+Name: servicio/
+Sealed: true
+
+Name: dominio/seguridad/
+Sealed: true
+
+Name: visual/util/
+Sealed: true
+
+Name: visual/app/
+Sealed: true
+
+Name: test/
+Sealed: true
+
+Name: util/
+Sealed: true
+
+Name: visual/app/tableModel/
+Sealed: true
+
+Name: persistencia/
+Sealed: true
+
+Name: visual/
+Sealed: true
+
+Name: visual/iface/
+Sealed: true
+
+Name: persistencia/imp/
+Sealed: true
+

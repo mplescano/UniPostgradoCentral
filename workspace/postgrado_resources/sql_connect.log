@@ -1,0 +1,25 @@
+[2009-01-11 21:34:38,547] INFO  de.simplicit.vjdbc.server.config.RmiConfiguration RMI-Configuration 
+[2009-01-11 21:34:38,594] INFO  de.simplicit.vjdbc.server.config.RmiConfiguration   ObjectName ............... VJdbc 
+[2009-01-11 21:34:38,594] INFO  de.simplicit.vjdbc.server.config.RmiConfiguration   Registry-Port ............ 2000 
+[2009-01-11 21:34:38,594] INFO  de.simplicit.vjdbc.server.config.RmiConfiguration   Remoting-Port ............ 2001 
+[2009-01-11 21:34:38,594] INFO  de.simplicit.vjdbc.server.config.RmiConfiguration   Create Registry .......... true 
+[2009-01-11 21:34:38,594] INFO  de.simplicit.vjdbc.server.config.RmiConfiguration   Use SSL .................. false 
+[2009-01-11 21:34:38,594] INFO  de.simplicit.vjdbc.server.config.OcctConfiguration OrphanedConnectionCollectorTask-Configuration (OCCT) 
+[2009-01-11 21:34:38,609] INFO  de.simplicit.vjdbc.server.config.OcctConfiguration   Checking-Period........... 30 sec 
+[2009-01-11 21:34:38,609] INFO  de.simplicit.vjdbc.server.config.OcctConfiguration   Timeout................... 2 min 
+[2009-01-11 21:34:38,625] INFO  de.simplicit.vjdbc.server.config.ConnectionConfiguration Connection-Configuration 'pgcentral' 
+[2009-01-11 21:34:38,625] INFO  de.simplicit.vjdbc.server.config.ConnectionConfiguration   Driver ..................... sun.jdbc.odbc.JdbcOdbcDriver 
+[2009-01-11 21:34:38,625] INFO  de.simplicit.vjdbc.server.config.ConnectionConfiguration   URL ........................ jdbc:odbc:pgcentral 
+[2009-01-11 21:34:38,625] INFO  de.simplicit.vjdbc.server.config.ConnectionConfiguration   User ....................... user 
+[2009-01-11 21:34:38,625] INFO  de.simplicit.vjdbc.server.config.ConnectionConfiguration   Password ................... ************ 
+[2009-01-11 21:34:38,625] INFO  de.simplicit.vjdbc.server.config.ConnectionConfiguration   Row-Packetsize ............. 200 
+[2009-01-11 21:34:38,625] INFO  de.simplicit.vjdbc.server.config.ConnectionConfiguration   Charset .................... ISO-8859-1 
+[2009-01-11 21:34:38,625] INFO  de.simplicit.vjdbc.server.config.ConnectionConfiguration   Compression ................ bestspeed 
+[2009-01-11 21:34:38,625] INFO  de.simplicit.vjdbc.server.config.ConnectionConfiguration   Compression-Thrs ........... 1000 bytes 
+[2009-01-11 21:34:38,625] INFO  de.simplicit.vjdbc.server.config.ConnectionConfiguration   Connection-Pool ............ off 
+[2009-01-11 21:34:38,625] INFO  de.simplicit.vjdbc.server.config.ConnectionConfiguration   Pre-Fetch ResultSetMetaData  off 
+[2009-01-11 21:34:38,625] INFO  de.simplicit.vjdbc.server.config.ConnectionConfiguration   Login-Handler .............. none 
+[2009-01-11 21:34:38,625] INFO  de.simplicit.vjdbc.server.config.ConnectionConfiguration   Trace Command-Counts ....... false 
+[2009-01-11 21:34:38,625] INFO  de.simplicit.vjdbc.server.config.ConnectionConfiguration   Trace Orphaned-Objects ..... false 
+[2009-01-11 21:34:38,625] INFO  de.simplicit.vjdbc.server.rmi.ConnectionServer Starting RMI-Registry on port 2000 
+[2009-01-11 21:34:40,500] INFO  de.simplicit.vjdbc.server.rmi.ConnectionServer Binding remote object to 'VJdbc' 

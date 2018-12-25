@@ -1,0 +1,534 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><!-- InstanceBegin template="/Templates/page.dwt" codeOutsideHTMLIsLocked="false" --><!-- InstanceBeginEditable name="doctitle" -->
+
+
+
+<meta name="keywords" content="Splash Screen, Java, OOP, Werner Randelshofer"><title>Science · Fast Java Splash Screen</title><!-- InstanceEndEditable -->
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><!-- InstanceBeginEditable name="head" -->
+
+<meta name="description" content="There are many articles about Splash Screens in Java. Only a few take performance seriously. This one does.">
+
+
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+<style type="text/css">
+<!--
+-->
+</style><!-- InstanceEndEditable -->
+
+<link href="javasplash_files/stylesheet2003.css" rel="stylesheet" type="text/css"></head><body leftmargin="0" topmargin="0" alink="#553355" bgcolor="#ffffff" link="#333399" marginheight="0" marginwidth="0" vlink="#553355">
+<!-- InstanceBeginEditable name="body" -->
+<div id="Spalte1" style="position: absolute; left: 10px; top: 80px; width: 700px; height: 40px; z-index: 3;">
+  <h1>How to do a    <em>fast</em> Splash Screen in Java</h1>
+</div>
+<div id="Spalte2" style="position: absolute; left: 12px; top: 140px; width: 460px; height: 5240px; z-index: 4;"> 
+  <p>Notice: This article has become obsolete with the new <a href="http://java.sun.com/javase/6/docs/api/java/awt/SplashScreen.html" target="_blank">SplashScreen
+    API</a>    that has been added to Java SE 6.</p>
+  <p class="lead">&nbsp;</p>
+  <p class="lead">There are many articles about doing Splash
+    Screens in Java. Not all of them take performance seriously. This one
+      does.</p>
+  <p class="semilead">A splash screen is an image being shown on  screen while
+    an application is starting up. This
+      article discusses how to create a splash screen
+          that is shown <em>very</em> early
+            in the process of starting a Java
+            application. To achieve this we minimize the number of API classes
+          needed to display the splash screen and we carefully avoid resource
+          contention
+          by the threads
+          running in the JVM. </p>
+  <h2 class="doubleparagraph"><a name="problem"></a>1. The Problem</h2>
+  <p class="semiparagraph">Java applications often have very long initialization
+    times. I am assuming, that we have already tried our best to reduce the start
+    up latency of our application. But sometimes we reach a hard limit that we
+    cannot undercut. It takes a while until our application is ready, and there
+  is nothing we can do about it.</p>
+  <p class="semiparagraph"> A splash screen is a means to provide feedback to
+    the user, telling that our application is starting up, and it also is a way
+  to advertise our product.</p>
+  <p class="semiparagraph"> At first glance, implementing a splash screen seems
+    to be straightforward. The
+    Swing API provides a rich set of classes to do this. Simply create a JWindow,
+    put a JLabel with an ImageIcon on it, put the current Thread to
+  sleep for 3 seconds and then continue loading the application...</p>
+  <p class="semiparagraph">    Unfortunately with such a naïve approach
+    we not only end up increasing the start up latency of our application by
+    the 3 seconds sleep time, we also
+    happen to 'achieve' that our splash screen shows up late in the initialization
+    process of our application. And if the splash screen shows up late, it does
+  not fulfil its job.</p>
+  <p class="semiparagraph">When we design a splash screen we have to take account
+    of the following:</p>
+  <ul>
+    <li class="semiparagraph"> <strong>Class resolution.</strong> Before the Java Virtual Machine (JVM) can use a class,
+          it has to load and initialize all other classes that are referenced by
+    this class. Without special measures taken, the JVM loads and initializes all
+          application classes before it starts to execute our splash screen code.
+    This
+    may take up a considerable amount of time.</li>
+    <li class="semiparagraph"> 
+      <strong>Size of API's.</strong> Displaying "Hello World" using Swing involves
+        the loading of roughly 800 API classes into the JVM. Doing the same using
+        AWT
+          only takes about 600 API classes. The less API classes we use for our
+    splash screen, the shorter will be its start up latency.</li>
+    <li class="semiparagraph"> <strong>Limited  Resources.</strong> Displaying
+      a splash screen is a CPU intensive task. We do not want the application
+      initialization code to contend with the splash
+      screen
+      code
+    over CPU resources.</li>
+    <li class="semiparagraph">      <strong>Clean design.</strong> We want to
+      keep the splash screen code separate from the initialisation code of our
+      application. This enables
+      us to test it separately,
+      and to add
+            or remove it to our liking without having to do much code changing.   </li>
+  </ul>
+  <h2 class="doubleparagraph"><a name="design"></a>2. Design Proposal</h2>
+  <p class="semiparagraph"> The proposed design consists of three classes:
+    MyApplication, Splasher and SplashWindow. The diagram below outlines the
+    classes and their collaboration.</p>
+  <p class="semiparagraph"><img src="javasplash_files/splashclasses.png" height="108" width="454"></p>
+  <p class="semiparagraph">MyApplication is our application class. SplashWindow
+    contains all code required to do the fast splash screen. Class Splasher is
+    the new entry point for MyApplication. The numbers indicate the sequence
+    of method invocations.</p>
+  <h2 class="doubleparagraph"><a name="MyApplication"></a>3. Class MyApplication</h2>
+  <p class="semiparagraph">MyApplication is our application class. It contains
+    the long running initialisation code. To achieve a clear design, we keep
+    this class free from our splash screen code. The only concession that we
+    require is, that its main method must return once the application is up and
+  running.</p>
+  <p class="semiparagraph"> Here is an outline of the code of MyApplication.java.</p>
+  <table class="semiparagraph" bgcolor="#f0f0f0" border="0" cellpadding="0" cellspacing="10" width="460">
+    <tbody><tr>
+      <td class="listing" height="23" valign="top"><p><strong>public class</strong> MyApplication
+          {<br>
+          <strong> &nbsp;&nbsp;&nbsp;&nbsp;public static void</strong> main(String[] args) {<br>
+          <font color="#333333">&nbsp;&nbsp;&nbsp;&nbsp;/* Start the application
+          and return when it is ready to use. */<br>
+          </font></p>
+        <p><font color="#333333">&nbsp;&nbsp;&nbsp;&nbsp;//...program code creating
+            a JFrame with a &#8216;Hello
+            World&#8217; message
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;omitted...</font><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+  }</p></td>
+    </tr>
+  </tbody></table><p class="semiparagraph"></p>
+  <p>Please note that we can launch the application <em>without</em> a splash
+    screen by directly invoking the main method of this class. This is useful
+    for testing
+  and debugging.</p>
+  <p class="semiparagraph"> Now let's see how to add a splash screen to this class. </p>
+  <h2 class="doubleparagraph"><a name="Splasher"></a>4. Class Splasher</h2>
+  <p class="semiparagraph">Splasher is our bootstrap class. Its  purpose
+    is to separate the splash screen code from the application class code, and
+    to keep class SplashWindow maintenance free. Class Splasher consists of a
+    main method only, which does three things:</p>
+  <ol class="semiparagraph">
+    <li>    Open the splash window</li>
+    <li>	Invoke the main method of class MyApplication</li>
+    <li> Close the splash window when the main method of MyApplication returns</li>
+  </ol>
+  <p class="semiparagraph">    Please note that we want to keep this class as
+    small as possible. The size of this class and of the of classes
+    referenced by this class directly
+        influence
+    the startup latency of our splash screen.</p>
+  <table class="semiparagraph" bgcolor="#f0f0f0" border="0" cellpadding="0" cellspacing="10" width="460">
+    <tbody><tr>
+      <td class="listing" height="23" valign="top"><p><strong>public class</strong> Splasher
+          {<br>
+          <strong>&nbsp;&nbsp;&nbsp;&nbsp;public static void main</strong>(String[] args) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SplashWindow.splash(Splasher.class.getResource("splash.gif"));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SplashWindow.invokeMain("MyApplication", args);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SplashWindow.disposeSplash();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+}</p>
+      </td>
+    </tr>
+  </tbody></table>
+  <p class="semiparagraph">As you can see, this class consists only of code that
+    delegates tasks to the SplashWindow class.</p>
+  <p class="semiparagraph">In fact, we could have moved all
+    the code of this class into class SplashWindow. Why haven't I done so? Class
+        Splasher contains all the code that needs to be changed per application.
+        That is, for each application we will be using another splash image,
+    and the class name of the application will also be different. This keeps
+    class
+      SplashWindow free from application specific changes. It can be reused over
+    and over again, without ever having to touch its code.</p>
+  <p class="semiparagraph">Also note, that we could have put all three method
+      calls
+      into a single call. But keeping each step of the initialization procedure
+    separate, makes the procedure easier to understand.</p>
+  <h2 class="doubleparagraph"><a name="SplashWindow"></a>5. Class SplashWindow</h2>
+  <p class="semiparagraph">Now lets take a look at class SplashWindow. This
+    class and its interaction with the other two classes are the meat of this
+  article. </p>
+  <p class="semiparagraph">I will show only the essential portions of this
+  class, the full listing is available in the attachment.</p>
+  <h3 class="doubleparagraph"><a name="invokeMain"></a>5.1 Method invokeMain()</h3>
+  <p class="semiparagraph"> First lets take a look at method invokeMain(). Here
+    we invoke the main() method of our application using, er, clumsy Reflection
+    code.</p>
+  <table class="semiparagraph" bgcolor="#f0f0f0" border="0" cellpadding="0" cellspacing="10" width="460">
+    <tbody><tr>
+      <td class="listing" height="23" valign="top"><p><strong>public static void</strong> invokeMain(String
+          className, String[] args) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>try</strong> {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class.forName(className)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.getMethod("main", <strong>new</strong> Class[] {String[].class})<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.invoke(<strong>null</strong>, <strong>new</strong> Object[] {args});<br>
+&nbsp;&nbsp;&nbsp;&nbsp;} <strong>catch</strong> (Exception e) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;InternalError error =</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>&nbsp;&nbsp;&nbsp;new</strong> InternalError("Failed to invoke main method");<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;error.initCause(e);<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>throw</strong> error;<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+          }</p></td>
+    </tr>
+  </tbody></table>
+  <p class="semiparagraph">    Today, most Java VM's lazily resolve and verify
+    classes. At one time, on Mac OS X 10.1, we had the case of an eagerly resolving
+    Java VM. Without using
+    Reflection,
+the main method of class Splasher was only executed, after the Java VM had resolved
+all dependencies between the Splasher class and the rest of the application,
+including of all API's used by the application.</p>
+  <p class="semiparagraph"> Reflection is a means to dynamically write code at
+    runtime. Therefore, the dependency between our splash screen code and the
+    application code will only be revealed
+  to the Java VM, when the Class.forName() method is executed. Since class Splasher
+  invokes method invokeMain() after it has invoked method splash(), the splash
+  screen will be shown to the user, before such a resolution process can take
+  place.</p>
+  <p class="semiparagraph"> Reflection does not prevent though, that the Java
+    VM loads all files of a JAR file and of dependent JAR files into memory
+    before executing our code. If
+    JAR file loading is a restricting performance factor (e.g. because we load
+    them over
+    a slow network connection), we may want to put the Splasher class and the
+    SplashWindow together with the splash image into a separate JAR file. In
+    the manifest of
+    the JAR file, we do not specify a dependency to the application JAR files.
+    Instead,
+    we change the invokeMain() method, to have it use an URLClassLoader to load
+    the JAR files containing the application.</p>
+  <h3 class="doubleparagraph">5.2 Method splash()</h3>
+  <p class="semiparagraph">Now, lets tackle method splash().</p>
+  <table class="semiparagraph" bgcolor="#f0f0f0" border="0" cellpadding="0" cellspacing="10" width="460">
+    <tbody><tr>
+      <td class="listing" height="23" valign="top"><p><strong>public static void</strong> splash(URL
+          imageURL) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong> (imageURL != <strong>null</strong>) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;splash(Toolkit.getDefaultToolkit().createImage(imageURL));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+}<br>
+<strong>private static</strong> SplashWindow instance;</p>
+        <p><br>
+          <strong>public static void</strong> splash(Image image) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<strong>if</strong> (instance == <strong>null</strong> &amp;&amp; image != <strong>null</strong>)
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Frame f = <strong>new</strong> Frame();<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance = <strong>new</strong> SplashWindow(f, image);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance.show();<br>
+</p>
+        <p><strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if </strong>(!
+          EventQueue.isDispatchThread() <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;&amp; Runtime.getRuntime().availableProcessors()
+== 1) {</p>
+        <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synchronized</strong> (instance) {<br>
+          <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while</strong> (! instance.paintCalled) {<br>
+          <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try</strong> {</p>
+        <p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance.wait();
+</p>        <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>} <strong>catch</strong> (InterruptedException
+  e) {}<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+  }</p></td>
+    </tr>
+  </tbody></table>
+  <p class="semiparagraph">You may have noticed, that there are two splash methods:
+    one that creates the image from the URL, and one that works with the SplashWindow
+    instance. This is just because
+    I like to keep methods short and simple.</p>
+  <p class="semiparagraph"><a name="firstsplash"></a>In the first splash() method we use  the AWT Toolkit
+    class to create the image. We use this method instead of the new Image IO
+    API, because it does not immediately load the image using the current thread.
+    We will initiate image loading in the AWT Event Dispatcher thread later.
+     I will come back to this topic further <a href="#constructor">below</a> in this article.</p>
+  <p class="semiparagraph"> <a name="secondsplash" id="secondsplash"></a>In the second splash() method, you see that an instance
+    of the SplashWindow is created (class SplashWindow is a subclass of java.awt.Window).
+    Then, the instance
+      is
+      shown. And then, we wait in a synchronized block until the paint method
+    of the instance has been called.</p>
+  <p class="semiparagraph">The last two steps are worth looking at closely.
+    Showing the SplashWindow, starts the AWT Event Dispatcher thread, which is
+    going
+    to call
+    the paint
+    method of the
+  SplashWindow.    We wait in the synchronized block until the painting has happened.</p>
+  <p class="semiparagraph">Why is there an if-statement which guards the synchronized
+    block?</p>
+  <p class="semiparagraph">We must not wait, if method splash() is called
+    from the AWT Event Dispatcher thread. This would cause a live lock, which
+    would hang our application. This check appears to be overkill, because we
+    are calling this method from the Main thread anyway. I have added it, because
+    I sometimes use the SplashWindow
+    to display the about
+    box of my application, and then I don't want to care on which thread
+    I am calling this method.</p>
+  <p class="semiparagraph">The check for the number of available processors is
+    more interesting.</p>
+  <p class="semiparagraph">On a single processor machine, if we wouldn't wait
+    here, and instead proceed with
+      our
+      start up
+      process,
+      we
+        would compete for the CPU  with the AWT
+        Event Dispatcher thread. Since the AWT Event Dispatcher thread has not
+      yet started, we are likely to win the competition, or &#8211; in this case &#8211;
+    actually hog the CPU, and therefore significantly delay the splash screen.
+    In the
+        worst
+        case,
+      the splash screen would not be shown at all.</p>
+  <p class="semiparagraph">On a multiple processor
+      machine, we have a chance, that both threads will get a CPU of their own.
+      In this
+        case, we have an opportunity to maximize resource usage. Of course, it
+      all depends on how independent the two threads are with respect to other
+      resources
+        they
+        are using. Thus, on a multiprocessor machine, we take a small risk of
+    delaying the splash screen by a little bit. In return for the risk, we get
+     better overall
+        performance.</p>
+  <h3 class="doubleparagraph"><a name="constructor"></a>5.3 The constructor</h3>
+  <p class="semiparagraph">The constructor of class SplashWindow makes the
+    object ready for later usage.</p>
+  <table class="semiparagraph" bgcolor="#f0f0f0" border="0" cellpadding="0" cellspacing="10" width="460">
+    <tbody><tr>
+      <td class="listing" height="23" valign="top"><p><strong>public class</strong> SplashWindow <strong>extends</strong> Window
+          {<br>
+              <strong>&nbsp;&nbsp;&nbsp;&nbsp;private</strong> SplashWindow(Frame
+              parent, Image image) {<br>
+              <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super</strong>(parent);<br>
+              <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this</strong>.image
+              = image;<br>
+              <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MediaTracker mt = <strong>new</strong> MediaTracker(<strong>this</strong>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mt.addImage(image,0);<br>
+        <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try</strong> {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mt.waitForID(0);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <strong>catch</strong>(InterruptedException
+ie){}<br>
+        <br>
+        <font color="#333333">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//...boilerplate
+        code omitted... </font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+          <p><font color="#666666">// ...</font></p>
+          <p>}</p>
+      </td>
+    </tr>
+  </tbody></table>
+  <p class="semiparagraph">In the <a href="#firstsplash">first</a> of the two splash() methods, we used
+      Toolkit.getDefault().createImage() to create the splash image. This did
+    not actually load the image data into memory. We load it now synchronously
+    using a MediaTracker.</p>
+  <p class="semiparagraph">Depending on the number of available processors, this
+    is not the only thing that is going on. This is because, the Main thread
+    may (or may not be) waiting in the synchronized block in the <a href="#secondsplash">second</a> of
+    the two splash() methods.</p>
+  <p class="semiparagraph">If we are running on a single CPU machine, the
+      processing of the image is  the only task that we want to work on
+    now. If the image is contained in the same JAR file as the other splash screen
+    classes,
+    the
+      Java VM has loaded it into memory already. All we have to do, is to decode
+    the image. The time for this task is entirely CPU bound. Any attempt to work
+    on more than one task now, would needlessly
+    delay the splash screen.</p>
+  <p class="semiparagraph">On a machine with more processors, the loading will
+    happen asynchronously to
+      the
+      Main thread, which we have sent off to  launch the application. If all
+    files are contained in the same JAR file, we are using one CPU entirely for
+    loading the image and leaving   other resources free for the application
+    initialization procedure.</p>
+  <h3 class="doubleparagraph">5.4 The painting methods</h3>
+  <p class="semiparagraph">And finally, lets take a look at the
+        methods which are responsible for painting
+                      the splash image.</p>
+  <table class="semiparagraph" bgcolor="#f0f0f0" border="0" cellpadding="0" cellspacing="10" width="460">
+    <tbody><tr>
+      <td class="listing" height="23" valign="top"><p><strong>private boolean</strong> paintCalled
+          = <strong>false</strong>;</p>
+        <p><br>
+          <strong>public void</strong> update(Graphics g) {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;paint(g);<br>
+          }<br>
+          <strong>public void</strong> paint(Graphics g) {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;g.drawImage(image, 0, 0, <strong>this</strong>);<br>
+          <br>
+          <strong>&nbsp;&nbsp;&nbsp;&nbsp;if</strong> (! paintCalled) {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paintCalled = <strong>true</strong>;<br>
+          <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;synchronized</strong> (<strong>this</strong>) { notifyAll(); }<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+          }<br>
+        </p></td>
+    </tr>
+  </tbody></table>
+  <p class="semiparagraph"><br>
+    The original implementation of method update() in class
+                        Window fills its display area with a background color
+      before calling
+                        the paint()
+                        method. Since we are
+                        drawing an image that completely covers this area, we
+      directly call paint(). This is done to avoid undesired flickering of the
+      splash image.</p>
+  <p class="semiparagraph"> In method paint(), we draw the image, and after this
+                          has happened the first time, we notify the Main thread
+                          of our
+                          application.
+                          As I have
+                          described further <a href="#secondsplash">above</a>,
+                          on a single CPU machine, the Main thread is patiently
+                          awaiting this notification in method splash(). This
+                          strategy
+                          ensures
+                          that, on a single CPU machine, the
+    user is granted
+                          to see
+    the splash window.</p>
+  <h2 class="doubleparagraph"><a name="conclusion"></a>Conclusion</h2>
+  <p class="semiparagraph">Doing a fast  splash screen, requires that we carefully
+    manage resources, so that tasks
+    needed for displaying the splash screen are executed prior to other tasks.</p>
+  <p class="semiparagraph">This article has shown, how to use Reflection to shift
+    the class resolution task behind the splash screen task,
+    and how
+    to keep
+    the CPU resource(s) focused on the splash screen task, until we have painted
+    our splash image on screen.</p>
+  <p class="semiparagraph">In side tracks of this article, we have covered additional
+    issues, such as avoiding  flickering, and how to take advantage of multiprocessor
+    machines.</p>
+  <h2 class="doubleparagraph"><a name="enhancements"></a>Possible enhancements</h2>
+  <p class="semiparagraph">    The splash screen described in this article is
+    pretty much bare bone. If you like, you can extend it to display information
+    about start up steps
+  to the user.</p>
+  <p class="semiparagraph">To do this, remember that we have designed class SplashWindow
+      using the Singleton design pattern. Thus you can add more static methods
+      to class SplashWindow,
+          which act on the Singleton instance. These static methods can be accessed
+          from the
+    main method of the MyApplication class (and of any other methods involved
+    in the start up procedure of our application).</p>
+  <p class="semiparagraph">This will have no negative
+      impact
+      on the class resolution and class loading issue, because the dependency
+    is  directed from the application code to the splash screen code, and not
+    the other way round.</p>
+</div><div id="Spalte5" style="position: absolute; left: 492px; top: 140px; width: 220px; height: 540px; z-index: 7;">
+  <h3 class="dividerparagraph">Chapters</h3>
+  <p>&nbsp;</p>
+  <ol>
+    <li><a href="#problem">The Problem</a></li>
+    <li><a href="#design">Design Proposal</a></li>
+    <li><a href="#MyApplication">Class MyApplication</a></li>
+    <li> <a href="#Splasher">Class Splasher</a></li>
+    <li><a href="#SplashWindow">Class SplashWindow</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#enhancements">Possible Enhancements</a></li>
+  </ol>
+  <h3 class="doubledividerparagraph">Downloads</h3>
+  <ul>
+    <li><a href="http://www.randelshofer.ch/oop/javasplash/MyApplication.java">MyApplication.java</a></li>
+    <li><a href="http://www.randelshofer.ch/oop/javasplash/Splasher.java">Splasher.java</a></li>
+    <li><a href="http://www.randelshofer.ch/oop/javasplash/SplashWindow.java">SplashWindow.java</a></li>
+    <li><a href="http://www.randelshofer.ch/oop/javasplash/splash.gif">splash.gif</a></li>
+  </ul>
+  <h3 class="doubledividerparagraph">Related Documentation</h3>
+  <p class="semiparagraph"><a href="http://www.randelshofer.ch/oop/javasplash/Java%20Splash%20Screen.pdf" target="_blank">Java
+  Splash Screen.pdf</a> by Roy Ratcliffe takes a in-depth  look at a number
+  of different optimization strategies for fast splash screens. Also discusses
+  when to use
+  and not to use
+  a splash screen.</p>
+  <h3 class="doubledividerparagraph">Splash Screen for Applets</h3>
+  <p class="semiparagraph">A  technique for presenting a Splash screen
+    in an Applet, is to override method paint() of the Applet, and to let method
+    init() invoke a Runnable() or a SwingWorker() on a background thread. Once
+    the background thread finishes, it adds  components to the Applet which obscure
+    the splash screen.</p>
+  <p class="semiparagraph">I am using this technique for Applets which have a
+    relatively small download size (less than 200 KB), but need a long time
+    to initialize.</p>
+  <p class="semiparagraph">For a working example take a look at my <a href="http://www.randelshofer.ch/rubikplayer/download.html">RubikPlayer
+    Applet</a> and my <a href="http://www.randelshofer.ch/rubik/virtualcubes/index.html">VirtualCube
+    Applets</a>. Both applets show a copyright message
+    during initalisation. The latter take a little bit longer to initialize,
+    so you can see the splash screen longer.</p>
+  <h3 class="doubledividerparagraph">Credits</h3>
+  <p class="semiparagraph">I would like to thank Roy Ratcliffe for
+    his  valuable critique and  input on both the code and this article.
+    And, of course, for providing an excellent analysis of multi-threaded
+    splash screens.</p>
+  <p class="semiparagraph">Special thanks go to Harry Mantheakis for the many
+    suggestions and the through analysis of the splash screen code published
+    in the first version of this
+  article.</p>
+  <p class="semiparagraph">I would like to thank the Apple Java-Dev community
+    who had an in-depth discussion about fast Splash Screens in Java.</p>
+  <p class="semiparagraph"></p>
+  <p>&nbsp;</p>
+</div>
+<div id="DetailNavigation" style="position: absolute; left: 10px; top: 6440px; width: 700px; height: 20px; z-index: 2; background-color: rgb(240, 240, 240);">
+  <table background="javasplash_files/footer.gif" border="0" cellpadding="0" cellspacing="0" height="30" width="700">
+    <tbody><tr>
+      <td class="footer" background="javasplash_files/footer.gif" height="20" valign="top">Copyright © Werner Randelshofer. All Rights Reserved.</td>
+    </tr>
+    <tr>
+      <td class="footer" height="10" valign="top"><img src="javasplash_files/transparent.gif" height="10" width="10"></td>
+    </tr>
+  </tbody></table>
+</div>
+<div id="Layer2" style="position: absolute; left: 12px; top: 10px; width: 700px; height: 40px; z-index: 11;">
+  <table border="0" cellpadding="0" cellspacing="0" height="41" width="700">
+    <tbody><tr>
+      <td rowspan="2" height="40" valign="top" width="40"><img src="javasplash_files/home_header.gif" height="40" width="40"></td>
+      <td class="nav1" height="20" valign="top" width="560"><a href="http://www.randelshofer.ch/index.html" class="nav1">Home</a><strong> ·</strong> <a href="http://www.randelshofer.ch/fun.html" class="nav1">Fun</a> · <a href="http://www.randelshofer.ch/science.html" class="nav1current">Science</a> · <a href="http://www.randelshofer.ch/software.html" class="nav1">Software</a></td>
+      <td class="logo" height="20" valign="top" width="100"><a href="http://www.randelshofer.ch/" class="logo">www.randelshofer.ch</a></td>
+    </tr>
+    <tr>
+      <td colspan="2" background="javasplash_files/header.gif" height="20" valign="top"><p class="nav2"><strong><a href="http://www.randelshofer.ch/science.html" class="nav2">Overview</a></strong> » <a href="http://www.randelshofer.ch/about.html" class="nav2current">Splash
+            Screen</a><a href="http://www.randelshofer.ch/links.html" class="nav2"></a></p></td>
+    </tr>
+  </tbody></table>
+</div>
+<!-- InstanceEndEditable -->
+<!-- InstanceEnd --></body></html>

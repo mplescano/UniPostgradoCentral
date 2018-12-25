@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+	"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="tpIdiomaSqlMap">
+	<resultMap class="dominio.negocio.TpIdioma" id="result">
+		<result property="id" column="idmid" />
+		<result property="idAlumnoEgresado" column="idmid_alumno_egresado" />
+		<result property="nombreIdioma" column="idmnombre_idioma" />
+		<result property="nivelIdioma" column="idmnivel_idioma" />
+	</resultMap>
+	
+	<statement id="getTpIdiomaList" resultMap="result">
+		SELECT
+			idm.id as idmid,
+			idm.id_alumno_egresado as idmid_alumno_egresado,
+			idm.nombre_idioma as idmnombre_idioma,
+			idm.nivel_idioma as idmnivel_idioma
+		FROM
+			idioma idm
+		<dynamic prepend="WHERE">
+			<isNotNull prepend="AND" property="idAlumnoEgresado">
+				idm.id_alumno_egresado=#idAlumnoEgresado#
+			</isNotNull>
+			<isNotNull prepend="AND" property="nombreIdioma">
+				idm.nombre_idioma LIKE #nombreIdioma#
+			</isNotNull>
+		</dynamic>
+	</statement>
+	
+	<statement id="getTpIdioma" resultMap="result">
+		SELECT
+			idm.id as idmid,
+			idm.id_alumno_egresado as idmid_alumno_egresado,
+			idm.nombre_idioma as idmnombre_idioma,
+			idm.nivel_idioma as idmnivel_idioma
+		FROM
+			idioma idm
+		WHERE
+			idm.id=#value#
+	</statement>
+	
+	<insert id="insertTpIdioma">
+		INSERT INTO idioma (id,id_alumno_egresado,nombre_idioma,nivel_idioma) VALUES (#id#,#idAlumnoEgresado#,#nombreIdioma#,#nivelIdioma#)
+	</insert>
+	
+	<update id="updateTpIdioma">
+		UPDATE idioma SET
+			id_alumno_egresado=#idAlumnoEgresado#,
+			nombre_idioma=#nombreIdioma#,
+			nivel_idioma=#nivelIdioma#
+		WHERE
+			id=#id#
+	</update>
+	
+	<delete id="deleteTpIdioma">
+		DELETE FROM idioma WHERE id=#value#
+	</delete>
+</sqlMap>

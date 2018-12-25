@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE daoConfig
+    PUBLIC "-//iBATIS.com//DTD DAO Configuration 2.0//EN"
+    "http://www.ibatis.com/dtd/dao-2.dtd">
+<daoConfig>
+  <context>
+    <transactionManager type="SQLMAP">
+      <property name="SqlMapConfigResource"
+        value="persistencia/sql/sql-map-config.xml"/>
+    </transactionManager>
+    <dao interface="persistencia.iface.AlumnoDao"
+      implementation="persistencia.imp.AlumnoImpDao"/>
+      
+    <dao interface="persistencia.iface.GradoTituloDao"
+      implementation="persistencia.imp.GradoTituloImpDao"/>
+      
+    <dao interface="persistencia.iface.IdiomaDao"
+      implementation="persistencia.imp.IdiomaImpDao"/>
+      
+    <dao interface="persistencia.iface.PlanEstudioDao"
+      implementation="persistencia.imp.PlanEstudioImpDao"/>
+      
+    <dao interface="persistencia.iface.UbigeoDao"
+      implementation="persistencia.imp.UbigeoImpDao"/>
+      
+    <dao interface="persistencia.iface.UsuarioDao"
+      implementation="persistencia.imp.UsuarioImpDao"/>
+
+    <dao interface="persistencia.iface.SecuenciaDao"
+      implementation="persistencia.imp.SecuenciaImpDao"/>
+      
+    <dao interface="persistencia.iface.EstudioPostgradoDao"
+      implementation="persistencia.imp.EstudioPostgradoImpDao"/>
+<!--
+
+    <dao interface="persistencia.iface.SecuenciaDao"
+      implementation="persistencia.sqlMapDao.SecuenciaSqlMapDao"/>
+
+    <dao interface="persistencia.iface.AlumnoDao"
+      implementation="persistencia.sqlMapDao.AlumnoSqlMapDao"/>
+
+    <dao interface="persistencia.iface.ProfesorDao"
+      implementation="persistencia.sqlMapDao.ProfesorSqlMapDao"/>
+
+    <dao interface="persistencia.iface.ModuloDao"
+      implementation="persistencia.sqlMapDao.ModuloSqlMapDao"/>
+
+    <dao interface="persistencia.iface.TpEstadoDao"
+      implementation="persistencia.sqlMapDao.TpEstadoSqlMapDao"/>
+
+    <dao interface="persistencia.iface.UbigeoDao"
+      implementation="persistencia.sqlMapDao.UbigeoSqlMapDao"/>
+
+    <dao interface="persistencia.iface.PeriodoAcademicoDao"
+      implementation="persistencia.sqlMapDao.PeriodoAcademicoSqlMapDao"/>
+
+    <dao interface="persistencia.iface.PaAlumnoDao"
+      implementation="persistencia.sqlMapDao.PaAlumnoSqlMapDao"/>
+-->
+  </context>
+</daoConfig>

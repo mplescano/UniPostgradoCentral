@@ -1,0 +1,18 @@
+DEBUG - Created connection 2112561.
+DEBUG - {conn-100000} Connection
+DEBUG - {pstm-100001} PreparedStatement:        SELECT     COUNT(*)    FROM     usuario    WHERE     username=? AND     clave=?     
+DEBUG - {pstm-100001} Parameters: [culloa, 2bc7afeb1db6026c37d72a1069a5429a]
+DEBUG - {pstm-100001} Types: [java.lang.String, java.lang.String]
+DEBUG - {rset-100002} ResultSet
+DEBUG - {rset-100002} Header: [Expr1000]
+DEBUG - {rset-100002} Result: [0]
+DEBUG - Returned connection 2112561 to pool.
+DEBUG - Checked out connection 2112561 from pool.
+DEBUG - {conn-100003} Connection
+DEBUG - {pstm-100004} PreparedStatement:        SELECT     COUNT(*)    FROM     usuario    WHERE     username=? AND     clave=?     
+DEBUG - {pstm-100004} Parameters: [culloa, e33c30693103dbab63009a1e88f0c9dc]
+DEBUG - {pstm-100004} Types: [java.lang.String, java.lang.String]
+DEBUG - {rset-100005} ResultSet
+DEBUG - {rset-100005} Header: [Expr1000]
+DEBUG - {rset-100005} Result: [1]
+DEBUG - Returned connection 2112561 to pool.

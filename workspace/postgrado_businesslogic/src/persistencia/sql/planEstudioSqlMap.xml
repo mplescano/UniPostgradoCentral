@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+	"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="planEstudioSqlMap">
+	<resultMap class="dominio.negocio.PlanEstudio" id="result">
+		<result property="id" column="peid" />
+		<result property="idAlumnoEgresado" column="peid_alumno_egresado" />
+		<result property="codigoCurso" column="pecodigo_curso" />
+		<result property="nombreCurso" column="penombre_curso" />
+		<result property="creditoCurso" column="pecredito_curso" />
+		<result property="notaCurso" column="penota_curso" />
+		<result property="docenteCurso" column="pedocente_curso" />
+		<result property="periodoCurso" column="peperiodo_curso" />
+		<result property="fechaIniCurso" column="pefecha_ini_curso" />
+	</resultMap>
+	
+	<statement id="getPlanEstudioList" resultMap="result">
+		SELECT
+			pe.id as peid,
+			pe.id_alumno_egresado as peid_alumno_egresado,
+			pe.codigo_curso as pecodigo_curso,
+			pe.nombre_curso as penombre_curso,
+			pe.credito_curso as pecredito_curso,
+			pe.nota_curso as penota_curso,
+			pe.docente_curso as pedocente_curso,
+			pe.periodo_curso as peperiodo_curso,
+			pe.fecha_ini_curso as pefecha_ini_curso
+		FROM
+			plan_estudio pe
+		<dynamic prepend="WHERE">
+			<isNotNull prepend="AND" property="idAlumnoEgresado">
+				pe.id_alumno_egresado=#idAlumnoEgresado#
+			</isNotNull>
+			<isNotNull prepend="AND" property="codigoCurso">
+				pe.codigo_curso LIKE #codigoCurso#
+			</isNotNull>
+			<isNotNull prepend="AND" property="nombreCurso">
+				pe.nombre_curso LIKE #nombreCurso#
+			</isNotNull>
+			<isNotNull prepend="AND" property="docenteCurso">
+				pe.docente_curso LIKE #docenteCurso#
+			</isNotNull>
+			<isNotNull prepend="AND" property="periodoCurso">
+				pe.periodo_curso LIKE #periodoCurso#
+			</isNotNull>
+		</dynamic>
+	</statement>
+	
+	<statement id="getPlanEstudio" resultMap="result">
+		SELECT
+			pe.id as peid
+			pe.id_alumno_egresado as peid_alumno_egresado
+			pe.codigo_curso as pecodigo_curso
+			pe.nombre_curso as penombre_curso
+			pe.credito_curso as pecredito_curso
+			pe.nota_curso as penota_curso
+			pe.docente_curso as pedocente_curso
+			pe.periodo_curso as peperiodo_curso
+			pe.fecha_ini_curso as pefecha_ini_curso
+		FROM
+			plan_estudio pe
+		WHERE
+			pe.id=#value#
+	</statement>
+	
+	<insert id="insertPlanEstudio">
+		INSERT INTO plan_estudio (	id,		id_alumno_egresado,	codigo_curso,			nombre_curso,			credito_curso,	nota_curso,		docente_curso,			periodo_curso,			fecha_ini_curso) VALUES (
+									#id#,	#idAlumnoEgresado#,	#codigoCurso:VARCHAR#,	#nombreCurso:VARCHAR#,	#creditoCurso#,	#notaCurso#,	#docenteCurso:VARCHAR#,	#periodoCurso:VARCHAR#,	#fechaIniCurso:DATE#)
+	</insert>
+	
+	<update id="updatePlanEstudio">
+		UPDATE plan_estudio SET
+			id_alumno_egresado=#idAlumnoEgresado#,
+			codigo_curso=#codigoCurso:VARCHAR#,
+			nombre_curso=#nombreCurso:VARCHAR#,
+			credito_curso=#creditoCurso#,
+			nota_curso=#notaCurso#,
+			docente_curso=#docenteCurso:VARCHAR#,
+			periodo_curso=#periodoCurso:VARCHAR#,
+			fecha_ini_curso=#fechaIniCurso:DATE#
+		WHERE
+			id=#id#
+	</update>
+	<delete id="deletePlanEstudio">
+		DELETE FROM plan_estudio WHERE id=#value#
+	</delete>
+</sqlMap>
